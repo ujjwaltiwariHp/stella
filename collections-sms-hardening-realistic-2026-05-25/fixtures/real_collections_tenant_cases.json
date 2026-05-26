@@ -1,0 +1,1614 @@
+{
+  "generated_at": "2026-05-25T00:00:00-04:00",
+  "redaction": {
+    "kept": [
+      "tenant names",
+      "property names",
+      "unit numbers",
+      "balances",
+      "days past due",
+      "stages",
+      "notes",
+      "historical outbound/draft message text"
+    ],
+    "removed": [
+      "phone numbers",
+      "email addresses",
+      "credentials",
+      "provider ids",
+      "access tokens"
+    ]
+  },
+  "cases": [
+    {
+      "id": "tenant_case_001",
+      "tenant": {
+        "first_name": "Reginald",
+        "last_name": "Hood",
+        "property_name": "12 Danbury Street Southeast",
+        "unit": "1",
+        "balance": 10460,
+        "days_past_due": 90,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 970,
+        "last_payment_amount": 970,
+        "last_payment_date": "04/30/2025",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": "eviction process started"
+      },
+      "thread": [
+        {
+          "direction": "draft",
+          "body": "Hi Reginald, your balance of $10,460.00 is now 10 months outstanding. With eviction proceedings already underway, it's critical we hear from you immediately to discuss your options before a formal notice is issued. Please call or reply now.",
+          "timestamp": "2026-03-13T02:06:25.004Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_002",
+      "tenant": {
+        "first_name": "Angela",
+        "last_name": "Bunting",
+        "property_name": "10 Danbury Street Southeast",
+        "unit": "4",
+        "balance": 8993.45,
+        "days_past_due": 90,
+        "stage": "hold_dispute",
+        "track": "standard",
+        "monthly_rent": 1045,
+        "last_payment_amount": 400,
+        "last_payment_date": "12/10/2025",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": true,
+        "hold_reason": "Placed on hold via draft approval",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "out",
+          "body": "Hi, just a reminder that there’s still an outstanding balance of $8,941.20.\n\nPlease let me know when we can expect to receive your payment.",
+          "timestamp": "2026-03-05T18:30:33.240Z",
+          "status": "historical_last_sent"
+        },
+        {
+          "direction": "draft",
+          "body": "Angela, a formal notice regarding your $8941.20 past-due balance was issued. Please contact us immediately to discuss resolution before further action is taken.",
+          "timestamp": "2026-03-05T15:38:58.335Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_003",
+      "tenant": {
+        "first_name": "Calthia",
+        "last_name": "Hooker Melvenia Williams",
+        "property_name": "6401 Saybrook Ave",
+        "unit": "D",
+        "balance": 8711.1,
+        "days_past_due": 90,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 1150,
+        "last_payment_amount": 1050,
+        "last_payment_date": "11/29/2025",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "draft",
+          "body": "Hi Calthia, your rent balance of $8711.10 is now 9 days past due. It's important we hear from you. Please contact us to discuss payment arrangements.",
+          "timestamp": "2026-03-10T13:35:22.107Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_004",
+      "tenant": {
+        "first_name": "Elizabeth",
+        "last_name": "Aparicio",
+        "property_name": "4239 First Street Southeast",
+        "unit": "3",
+        "balance": 7437.44,
+        "days_past_due": 90,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 1056,
+        "last_payment_amount": 200,
+        "last_payment_date": "11/13/2025",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "draft",
+          "body": "Hi Elizabeth, your balance of $7,437.44 is now 3 months past due. We need to hear from you immediately — if we don't connect within the next few days, a formal notice will be issued. Please call or reply now to discuss your options.",
+          "timestamp": "2026-03-13T02:13:56.386Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_005",
+      "tenant": {
+        "first_name": "Tiffany",
+        "last_name": "Righter",
+        "property_name": "500 N clayton st",
+        "unit": "1",
+        "balance": 6870.5,
+        "days_past_due": 90,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 1700,
+        "last_payment_amount": 1760,
+        "last_payment_date": "02/05/2026",
+        "promise_date": "2026-03-18",
+        "promise_to_pay": "Promised to pay by 2026-03-18",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "draft",
+          "body": "Tiffany, a formal notice regarding your $6785.50 past-due balance was issued. Please contact us immediately to discuss resolution before further action is taken.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_006",
+      "tenant": {
+        "first_name": "Shakeria",
+        "last_name": "Reaves",
+        "property_name": "610 Homestead St",
+        "unit": "(SFH)",
+        "balance": 6605.55,
+        "days_past_due": 90,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 2760,
+        "last_payment_amount": null,
+        "last_payment_date": "",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "draft",
+          "body": "Shakeria, a formal notice regarding your $6467.55 past-due balance was issued. Please contact us immediately to discuss resolution before further action is taken.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_007",
+      "tenant": {
+        "first_name": "Deza'Nasha",
+        "last_name": "Stewart",
+        "property_name": "674-684 Stuyvesant Avenue , 13-15 Christoph Ave",
+        "unit": "13-2",
+        "balance": 5600.98,
+        "days_past_due": 90,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 1066,
+        "last_payment_amount": 150,
+        "last_payment_date": "02/20/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "draft",
+          "body": "Deza'Nasha, despite partial payments, your account still carries a past-due balance of $5526.36 (90 days). We need to formalize a repayment arrangement. Please contact us immediately.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_008",
+      "tenant": {
+        "first_name": "Eugene",
+        "last_name": "Powell",
+        "property_name": "6401 Saybrook Ave",
+        "unit": "B",
+        "balance": 4872.5,
+        "days_past_due": 90,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 1050,
+        "last_payment_amount": 50,
+        "last_payment_date": "01/06/2026",
+        "promise_date": "2026-03-18",
+        "promise_to_pay": "Promised to pay by 2026-03-18",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "draft",
+          "body": "Eugene, a formal notice regarding your $4767.50 past-due balance was issued. Please contact us immediately to discuss resolution before further action is taken.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_009",
+      "tenant": {
+        "first_name": "Andrea",
+        "last_name": "Hollis",
+        "property_name": "1914 Monument St",
+        "unit": "(SFH)",
+        "balance": 3613.78,
+        "days_past_due": 90,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 1544,
+        "last_payment_amount": 1048,
+        "last_payment_date": "03/02/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "draft",
+          "body": "Andrea, despite partial payments, your account still carries a past-due balance of $3214.84 (60 days). We need to formalize a repayment arrangement. Please contact us immediately.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_010",
+      "tenant": {
+        "first_name": "Rashid",
+        "last_name": "Putten",
+        "property_name": "4040 Livingston Road Southeast",
+        "unit": "203",
+        "balance": 3559,
+        "days_past_due": 90,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 840,
+        "last_payment_amount": 851,
+        "last_payment_date": "02/23/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": "Unemployed - we must start the eviction. Phone call 03/12"
+      },
+      "thread": [
+        {
+          "direction": "out",
+          "body": "Hi Rashid.\n\nI wanted to remind you that there’s still an outstanding balance of $3,517\n\nPlease let me know when we can expect to receive your payment.\n\nMatan with Tri Star RealtyHi Rashid, \n\nI wanted to remind you that there’s still an outstanding balance of $3,517. \n\nPlease let me know when we can expect to receive your payment. \n\nBest,  \nMatan  \nTri Star Realty",
+          "timestamp": "2026-03-05T18:35:25.226Z",
+          "status": "historical_last_sent"
+        },
+        {
+          "direction": "draft",
+          "body": "Rashid, despite partial payments, your account still carries a past-due balance of $3517.00 (90 days). We need to formalize a repayment arrangement. Please contact us immediately.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_011",
+      "tenant": {
+        "first_name": "Jaden",
+        "last_name": "Grove",
+        "property_name": "300 College Park Dr",
+        "unit": "308",
+        "balance": 3149.25,
+        "days_past_due": 60,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 850,
+        "last_payment_amount": 97,
+        "last_payment_date": "02/07/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "draft",
+          "body": "Jaden, a formal notice regarding your $3064.25 past-due balance was issued. Please contact us immediately to discuss resolution before further action is taken.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_012",
+      "tenant": {
+        "first_name": "Scott",
+        "last_name": "and Natalie Megna",
+        "property_name": "5626 Peabody Ave",
+        "unit": "(SFH)",
+        "balance": 2380.58,
+        "days_past_due": 30,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 2550,
+        "last_payment_amount": 350,
+        "last_payment_date": "03/08/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": "Scott Megna 5626 Peabody Tenant:\n\tGood morning,Mr Issac I can see on my app that I will be getting the check today I will be paying 2,500 today and tomorrow then 700 every week till zero balance apologizes for the delay but will have this cleared up soon    \n\nIsaac Bahary:\n\t2500 today and 2500 tomorrow, correct?\n\nScott Megna 5626 Peabody Tenant:\n\tNo gonna do 2500 today and Tommy when the check fully clears ,then 700 every week till zero ba\n\tBalance \n\tA combo of the 2 days cause don't know if full check will all clear today when I deposit it \n\nIsaac Bahary:\n\tYou mean 2500 total between today and tomorrow?\n\nScott Megna 5626 Peabody Tenant:\n\tYes sir just cause I don't know if woke check will clear today .then 700 a week till it's cleared ,\n\tAnd that 700 a week starting Fri \n\tSo a total of 3,200 this week"
+      },
+      "thread": [
+        {
+          "direction": "draft",
+          "body": "Scott, a formal notice regarding your $5402.08 past-due balance was issued. Please contact us immediately to discuss resolution before further action is taken.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_013",
+      "tenant": {
+        "first_name": "Nikida",
+        "last_name": "Jones",
+        "property_name": "6528 Limekiln Pike",
+        "unit": "(SFH)",
+        "balance": 2325.65,
+        "days_past_due": 23,
+        "stage": "16+_dpd",
+        "track": "partial",
+        "monthly_rent": 0,
+        "last_payment_amount": 130,
+        "last_payment_date": "03/19/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "draft",
+          "body": "Hi Nikida, thank you for your recent payment. Just a reminder that a remaining balance of $2247.85 is still outstanding (4 days past due). Please let us know when we can expect the rest.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_014",
+      "tenant": {
+        "first_name": "Mary",
+        "last_name": "Edwards",
+        "property_name": "317 Booth st",
+        "unit": "4.BED",
+        "balance": 2143.32,
+        "days_past_due": 60,
+        "stage": "16+_dpd",
+        "track": "partial",
+        "monthly_rent": 1330,
+        "last_payment_amount": 150,
+        "last_payment_date": "03/22/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "out",
+          "body": "Hi Mary, this is Matan. What’s the plan for your balance due?",
+          "timestamp": "2026-03-12T19:52:08.938Z",
+          "status": "historical_last_sent"
+        },
+        {
+          "direction": "draft",
+          "body": "Mary, despite partial payments, your account still carries a past-due balance of $1873.44 (30 days). We need to formalize a repayment arrangement. Please contact us immediately.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_015",
+      "tenant": {
+        "first_name": "Tredell",
+        "last_name": "David",
+        "property_name": "129-131 E Roosevelt Blvd",
+        "unit": "131.7",
+        "balance": 2082.5,
+        "days_past_due": 30,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 700,
+        "last_payment_amount": 820,
+        "last_payment_date": "01/08/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "out",
+          "body": "Tredell, a formal notice regarding your $2705.00 past-due balance was issued. Please contact us immediately to discuss resolution before further action is taken.",
+          "timestamp": "2026-03-16T15:41:06.103Z",
+          "status": "historical_last_sent"
+        },
+        {
+          "direction": "draft",
+          "body": "Tredell, a formal notice regarding your $2705.00 past-due balance was issued. Please contact us immediately to discuss resolution before further action is taken.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_016",
+      "tenant": {
+        "first_name": "Jennifer",
+        "last_name": "Lively",
+        "property_name": "37 Lighthouse Drive",
+        "unit": "(SFH)",
+        "balance": 1938.22,
+        "days_past_due": 60,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 11,
+        "last_payment_amount": 2632,
+        "last_payment_date": "02/06/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "draft",
+          "body": "Jennifer, a formal notice regarding your $2213.02 past-due balance was issued. Please contact us immediately to discuss resolution before further action is taken.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_017",
+      "tenant": {
+        "first_name": "Aqel",
+        "last_name": "King",
+        "property_name": "30 Danbury Street Southeast",
+        "unit": "2",
+        "balance": 1850,
+        "days_past_due": 60,
+        "stage": "16+_dpd",
+        "track": "partial",
+        "monthly_rent": 1161.6,
+        "last_payment_amount": -1800,
+        "last_payment_date": "03/13/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "draft",
+          "body": "Aqel, despite partial payments, your account still carries a past-due balance of $2933.72 (90 days). We need to formalize a repayment arrangement. Please contact us immediately.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_018",
+      "tenant": {
+        "first_name": "Kieth",
+        "last_name": "Diggs",
+        "property_name": "214 W main st",
+        "unit": "2",
+        "balance": 1228.75,
+        "days_past_due": 30,
+        "stage": "16+_dpd",
+        "track": "partial",
+        "monthly_rent": 1275,
+        "last_payment_amount": 500,
+        "last_payment_date": "03/21/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "draft",
+          "body": "Kieth, despite partial payments, your account still carries a past-due balance of $2015.00 (30 days). We need to formalize a repayment arrangement. Please contact us immediately.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_019",
+      "tenant": {
+        "first_name": "William",
+        "last_name": "Budd",
+        "property_name": "4239 First Street Southeast",
+        "unit": "2",
+        "balance": 1225.49,
+        "days_past_due": 30,
+        "stage": "16+_dpd",
+        "track": "partial",
+        "monthly_rent": 1095,
+        "last_payment_amount": 365,
+        "last_payment_date": "03/13/2026",
+        "promise_date": "2026-03-24",
+        "promise_to_pay": "Promised to pay by 2026-03-24",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "out",
+          "body": "Good morning, just a heads up. If your rent is not paid in full by 03/25, we will proceed with starting the eviction process in accordance with the lease agreement and applicable law.  Please text me once the payment has been made. Thank you.",
+          "timestamp": "2026-03-18T13:55:00.076Z",
+          "status": "historical_last_sent"
+        },
+        {
+          "direction": "draft",
+          "body": "William, despite partial payments, your account still carries a past-due balance of $1514.75 (30 days). We need to formalize a repayment arrangement. Please contact us immediately.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_020",
+      "tenant": {
+        "first_name": "Alani",
+        "last_name": "Austin",
+        "property_name": "400 College Park Dr",
+        "unit": "405",
+        "balance": 1210,
+        "days_past_due": 30,
+        "stage": "16+_dpd",
+        "track": "partial",
+        "monthly_rent": 975,
+        "last_payment_amount": -1160,
+        "last_payment_date": "03/19/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "draft",
+          "body": "Alani, a formal notice regarding your $1247.00 past-due balance was issued. Please contact us immediately to discuss resolution before further action is taken.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_021",
+      "tenant": {
+        "first_name": "Ziara",
+        "last_name": "Blackwell",
+        "property_name": "2119-2121 W 3rd St",
+        "unit": "7",
+        "balance": 1109.32,
+        "days_past_due": 90,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 79,
+        "last_payment_amount": 1150,
+        "last_payment_date": "03/03/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "draft",
+          "body": "Ziara, despite partial payments, your account still carries a past-due balance of $1109.32 (90 days). We need to formalize a repayment arrangement. Please contact us immediately.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_022",
+      "tenant": {
+        "first_name": "Barbara",
+        "last_name": "Arnold",
+        "property_name": "4020 Livingston Road Southeast",
+        "unit": "203",
+        "balance": 974,
+        "days_past_due": 23,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 940,
+        "last_payment_amount": 1000,
+        "last_payment_date": "03/06/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "out",
+          "body": "Hi Barbara,\n\nYou still have a balance due of $974. Please make sure this balance is paid by the end of the month, and that April’s rent is paid on time.\n\nIf you need a payment plan, please let me know so we can discuss it. Thank you.",
+          "timestamp": "2026-03-23T20:59:35.611Z",
+          "status": "historical_last_sent"
+        },
+        {
+          "direction": "draft",
+          "body": "Barbara, a formal notice regarding your $1927.00 past-due balance was issued. Please contact us immediately to discuss resolution before further action is taken.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_023",
+      "tenant": {
+        "first_name": "Deshona",
+        "last_name": "Wilkins",
+        "property_name": "1016-1018 S 52nd St",
+        "unit": "16.2B",
+        "balance": 900,
+        "days_past_due": 30,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 1400,
+        "last_payment_amount": 750,
+        "last_payment_date": "03/02/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "draft",
+          "body": "Deshona, despite partial payments, your account still carries a past-due balance of $760.00 (30 days). We need to formalize a repayment arrangement. Please contact us immediately.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_024",
+      "tenant": {
+        "first_name": "Latwyla",
+        "last_name": "Mathias",
+        "property_name": "4030 Livingston Road Southeast",
+        "unit": "202",
+        "balance": 858.5,
+        "days_past_due": 23,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 1090,
+        "last_payment_amount": 1376,
+        "last_payment_date": "03/07/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "draft",
+          "body": "Latwyla, a formal notice regarding your $2234.50 past-due balance was issued. Please contact us immediately to discuss resolution before further action is taken.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_025",
+      "tenant": {
+        "first_name": "Yvette",
+        "last_name": "Kidd",
+        "property_name": "4020 Livingston Road Southeast",
+        "unit": "101",
+        "balance": 850.5,
+        "days_past_due": 23,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 810,
+        "last_payment_amount": 810,
+        "last_payment_date": "02/05/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "out",
+          "body": "Hi Yvette.\n\nI wanted to remind you that there’s still an outstanding balance of $850.50\n\nPlease let me know when we can expect to receive your payment.\n\nMatan with Tri Star Realty",
+          "timestamp": "2026-03-23T21:01:48.817Z",
+          "status": "historical_last_sent"
+        },
+        {
+          "direction": "draft",
+          "body": "Hi Yvette, this is a friendly reminder that your rent balance of $810.00 is 4 day(s) past due. Please let us know if you have any questions or need to discuss payment arrangements.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_026",
+      "tenant": {
+        "first_name": "Alexander",
+        "last_name": "Makler",
+        "property_name": "10 Robby Dr",
+        "unit": "(SFH)",
+        "balance": 815.68,
+        "days_past_due": 90,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 2950,
+        "last_payment_amount": -1,
+        "last_payment_date": "02/16/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "draft",
+          "body": "Alexander, a formal notice regarding your $888.47 past-due balance was issued. Please contact us immediately to discuss resolution before further action is taken.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_027",
+      "tenant": {
+        "first_name": "John",
+        "last_name": "Harris",
+        "property_name": "2729 W 3rd St",
+        "unit": "1F",
+        "balance": 810.5,
+        "days_past_due": 90,
+        "stage": "16+_dpd",
+        "track": "partial",
+        "monthly_rent": 750,
+        "last_payment_amount": 750,
+        "last_payment_date": "03/13/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "draft",
+          "body": "John, a formal notice regarding your $1673.16 past-due balance was issued. Please contact us immediately to discuss resolution before further action is taken.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_028",
+      "tenant": {
+        "first_name": "Laurence",
+        "last_name": "Carter",
+        "property_name": "4239 First Street Southeast",
+        "unit": "1",
+        "balance": 802,
+        "days_past_due": 30,
+        "stage": "16+_dpd",
+        "track": "partial",
+        "monthly_rent": 1095,
+        "last_payment_amount": 700,
+        "last_payment_date": "03/15/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "out",
+          "body": "Hi Laurence. There’s still an outstanding balance of $802 Please let me know when we can expect to receive your payment.",
+          "timestamp": "2026-03-23T20:31:49.100Z",
+          "status": "historical_last_sent"
+        },
+        {
+          "direction": "draft",
+          "body": "Laurence, a formal notice regarding your $1777.25 past-due balance was issued. Please contact us immediately to discuss resolution before further action is taken.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_029",
+      "tenant": {
+        "first_name": "Steven",
+        "last_name": "Bolden",
+        "property_name": "4040 Livingston Road Southeast",
+        "unit": "302",
+        "balance": 781.35,
+        "days_past_due": 60,
+        "stage": "16+_dpd",
+        "track": "partial",
+        "monthly_rent": 700,
+        "last_payment_amount": 700,
+        "last_payment_date": "03/13/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "out",
+          "body": "Hi Steven, just a reminder to please pay the $781.35 by 03/25. If the payment isn't made by then, I may need to take legal steps. Please let me know once you've completed the payment. Thanks! Matan",
+          "timestamp": "2026-03-23T20:39:30.717Z",
+          "status": "historical_last_sent"
+        },
+        {
+          "direction": "draft",
+          "body": "Steven, a formal notice regarding your $1400.00 past-due balance was issued. Please contact us immediately to discuss resolution before further action is taken.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_030",
+      "tenant": {
+        "first_name": "Christopher",
+        "last_name": "Jowett",
+        "property_name": "2-4 South West Boulevard",
+        "unit": "4A",
+        "balance": 777,
+        "days_past_due": 30,
+        "stage": "16+_dpd",
+        "track": "partial",
+        "monthly_rent": 1300,
+        "last_payment_amount": 400,
+        "last_payment_date": "03/19/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "draft",
+          "body": "Christopher, despite partial payments, your account still carries a past-due balance of $1977.00 (30 days). We need to formalize a repayment arrangement. Please contact us immediately.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_031",
+      "tenant": {
+        "first_name": "Thomas",
+        "last_name": "Baluka",
+        "property_name": "429 Jackson Avenue",
+        "unit": "B",
+        "balance": 763.35,
+        "days_past_due": 90,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 1075,
+        "last_payment_amount": 1075,
+        "last_payment_date": "03/04/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "draft",
+          "body": "Thomas, while we appreciate your partial payments, your account still has an outstanding balance of $763.48 (14 days past due). We need to discuss a formal arrangement for the remaining amount. Please contact us.",
+          "timestamp": "2026-03-15T18:25:22.651Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_032",
+      "tenant": {
+        "first_name": "Mohamed",
+        "last_name": "Bade",
+        "property_name": "6401 Saybrook Ave",
+        "unit": "E",
+        "balance": 707.67,
+        "days_past_due": 30,
+        "stage": "16+_dpd",
+        "track": "partial",
+        "monthly_rent": 725,
+        "last_payment_amount": 725,
+        "last_payment_date": "03/13/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "out",
+          "body": "Hi Mohamed, please make sure to pay your balance by tomorrow. If you need a payment plan, let me know.",
+          "timestamp": "2026-03-23T20:23:20.723Z",
+          "status": "historical_last_sent"
+        },
+        {
+          "direction": "draft",
+          "body": "Mohamed, a formal notice regarding your $1360.17 past-due balance was issued. Please contact us immediately to discuss resolution before further action is taken.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_033",
+      "tenant": {
+        "first_name": "Nidia",
+        "last_name": "Guzman",
+        "property_name": "1488 Mt Ephraim Ave",
+        "unit": "COMM",
+        "balance": 705.94,
+        "days_past_due": 30,
+        "stage": "16+_dpd",
+        "track": "partial",
+        "monthly_rent": 600,
+        "last_payment_amount": 585,
+        "last_payment_date": "03/16/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "out",
+          "body": "Hi Nidia.  I wanted to remind you that there’s still an outstanding balance of $705.94  Please let me know when we can expect to receive your payment.  Matan with Tri Star Realty",
+          "timestamp": "2026-03-24T17:48:23.603Z",
+          "status": "historical_last_sent"
+        },
+        {
+          "direction": "draft",
+          "body": "Nidia, a formal notice regarding your $1221.97 past-due balance was issued. Please contact us immediately to discuss resolution before further action is taken.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_034",
+      "tenant": {
+        "first_name": "El-Hajj",
+        "last_name": "Malik",
+        "property_name": "4030 Livingston Road Southeast",
+        "unit": "301",
+        "balance": 634,
+        "days_past_due": 23,
+        "stage": "16+_dpd",
+        "track": "partial",
+        "monthly_rent": 995,
+        "last_payment_amount": 500,
+        "last_payment_date": "03/14/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "out",
+          "body": "Hi El-Hajj.\n\nI wanted to remind you that there’s still an outstanding balance of $1,134\n\nPlease let me know when we can expect to receive your payment.\n\nMatan with Tri Star Realty",
+          "timestamp": "2026-03-12T20:31:54.194Z",
+          "status": "historical_last_sent"
+        },
+        {
+          "direction": "draft",
+          "body": "El-Hajj, despite partial payments, your account still carries a past-due balance of $1584.25 (30 days). We need to formalize a repayment arrangement. Please contact us immediately.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_035",
+      "tenant": {
+        "first_name": "Alexandra",
+        "last_name": "R Brodzik",
+        "property_name": "2-4 South West Boulevard",
+        "unit": "4RIGHT",
+        "balance": 540,
+        "days_past_due": 23,
+        "stage": "16+_dpd",
+        "track": "partial",
+        "monthly_rent": 0,
+        "last_payment_amount": 750,
+        "last_payment_date": "03/13/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "draft",
+          "body": "Hi Alexandra, this is a friendly reminder that your rent balance of $2040.00 is 4 day(s) past due. Please let us know if you have any questions or need to discuss payment arrangements.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_036",
+      "tenant": {
+        "first_name": "Willie",
+        "last_name": "Anderson",
+        "property_name": "1682 Harrison st",
+        "unit": "2",
+        "balance": 508,
+        "days_past_due": 30,
+        "stage": "16+_dpd",
+        "track": "partial",
+        "monthly_rent": 900,
+        "last_payment_amount": 128,
+        "last_payment_date": "03/19/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "draft",
+          "body": "Willie, despite partial payments, your account still carries a past-due balance of $996.00 (30 days). We need to formalize a repayment arrangement. Please contact us immediately.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_037",
+      "tenant": {
+        "first_name": "Isaac",
+        "last_name": "Bahary Test",
+        "property_name": "Test Property",
+        "unit": "1",
+        "balance": 500,
+        "days_past_due": 15,
+        "stage": "11-15_dpd",
+        "track": "standard",
+        "monthly_rent": 1500,
+        "last_payment_amount": 0,
+        "last_payment_date": "",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "draft",
+          "body": "Isaac, your account balance of $500.00 is now 15 days past due. We have made multiple attempts to contact you. If we do not hear from you within the next few days, a formal notice will be issued. Please contact us immediately.",
+          "timestamp": "2026-03-17T10:42:32.800Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_038",
+      "tenant": {
+        "first_name": "Isaac",
+        "last_name": "Bahary",
+        "property_name": "Test Property",
+        "unit": "TEST-1",
+        "balance": 500,
+        "days_past_due": 15,
+        "stage": "hold_dispute",
+        "track": "standard",
+        "monthly_rent": 2500,
+        "last_payment_amount": 2500,
+        "last_payment_date": "2026-02-15",
+        "promise_date": "2026-03-16",
+        "promise_to_pay": "Promised to pay by 2026-03-16",
+        "hold_flag": true,
+        "hold_reason": "Manual hold",
+        "notes": "Test tenant - \nMTM lease"
+      },
+      "thread": [
+        {
+          "direction": "out",
+          "body": "Collections SMS routing test — verifying from-number is [PHONE_REMOVED].",
+          "timestamp": "2026-03-17T01:33:45.701Z",
+          "status": "historical_last_sent"
+        },
+        {
+          "direction": "draft",
+          "body": "test",
+          "timestamp": "2026-03-02T14:52:56.794Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_039",
+      "tenant": {
+        "first_name": "Isaac",
+        "last_name": "Bahary Test",
+        "property_name": "Test Property — SMS Routing",
+        "unit": "1",
+        "balance": 500,
+        "days_past_due": 15,
+        "stage": "11-15_dpd",
+        "track": "standard",
+        "monthly_rent": 1500,
+        "last_payment_amount": 0,
+        "last_payment_date": "",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": "Test tenant for SMS from-number verification"
+      },
+      "thread": [
+        {
+          "direction": "draft",
+          "body": "Isaac, your account balance of $500.00 is now 15 days past due. We have made multiple attempts to contact you. If we do not hear from you within the next few days, a formal notice will be issued. Please contact us immediately.",
+          "timestamp": "2026-03-17T10:42:32.730Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_040",
+      "tenant": {
+        "first_name": "Najae",
+        "last_name": "Henderson",
+        "property_name": "18 Danbury Street Southeast",
+        "unit": "3",
+        "balance": 496.19,
+        "days_past_due": 30,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 996,
+        "last_payment_amount": 925.01,
+        "last_payment_date": "03/03/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "draft",
+          "body": "Najae, despite partial payments, your account still carries a past-due balance of $446.79 (30 days). We need to formalize a repayment arrangement. Please contact us immediately.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_041",
+      "tenant": {
+        "first_name": "Shaquana",
+        "last_name": "Barnes",
+        "property_name": "108 Hudson Ave",
+        "unit": "1",
+        "balance": 445.4,
+        "days_past_due": 90,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 3300,
+        "last_payment_amount": 120,
+        "last_payment_date": "03/09/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "draft",
+          "body": "Shaquana, despite partial payments, your account still carries a past-due balance of $145.40 (60 days). We need to formalize a repayment arrangement. Please contact us immediately.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_042",
+      "tenant": {
+        "first_name": "Lauren",
+        "last_name": "Rosario",
+        "property_name": "95 Sykes ave",
+        "unit": "SIDE",
+        "balance": 439.17,
+        "days_past_due": 23,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 1575,
+        "last_payment_amount": 1000,
+        "last_payment_date": "03/05/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "draft",
+          "body": "Lauren, a formal notice regarding your $4898.31 past-due balance was issued. Please contact us immediately to discuss resolution before further action is taken.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_043",
+      "tenant": {
+        "first_name": "Alexander",
+        "last_name": "Bice",
+        "property_name": "400 College Park Dr",
+        "unit": "403",
+        "balance": 365,
+        "days_past_due": 23,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 925,
+        "last_payment_amount": 1100,
+        "last_payment_date": "02/26/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "draft",
+          "body": "Hi Alexander, thank you for your recent payment. Just a reminder that a remaining balance of $365.00 is still outstanding (4 days past due). Please let us know when we can expect the rest.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_044",
+      "tenant": {
+        "first_name": "Morris",
+        "last_name": "Evans",
+        "property_name": "2119-2121 W 3rd St",
+        "unit": "6",
+        "balance": 323,
+        "days_past_due": 30,
+        "stage": "16+_dpd",
+        "track": "partial",
+        "monthly_rent": 975,
+        "last_payment_amount": 400,
+        "last_payment_date": "03/12/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "draft",
+          "body": "Morris, despite partial payments, your account still carries a past-due balance of $1131.50 (30 days). We need to formalize a repayment arrangement. Please contact us immediately.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_045",
+      "tenant": {
+        "first_name": "Curtis",
+        "last_name": "Pinkey",
+        "property_name": "4233 First Street Southeast",
+        "unit": "4",
+        "balance": 250.57,
+        "days_past_due": 23,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 1056,
+        "last_payment_amount": 119.01,
+        "last_payment_date": "03/06/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "draft",
+          "body": "Hi Curtis, thank you for your recent payment. Just a reminder that a remaining balance of $316.78 is still outstanding (4 days past due). Please let us know when we can expect the rest.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_046",
+      "tenant": {
+        "first_name": "Martin",
+        "last_name": "Marion",
+        "property_name": "1004 s 52nd St",
+        "unit": "04.1F",
+        "balance": 245,
+        "days_past_due": 90,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 1150,
+        "last_payment_amount": 1020,
+        "last_payment_date": "03/02/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": "The balance in Stella is different from the balance in Yardi."
+      },
+      "thread": [
+        {
+          "direction": "out",
+          "body": "Hi Martin.\n\nI wanted to remind you that there’s still an outstanding balance of $245\n\nPlease let me know when we can expect to receive your payment.\n\nMatan with Tri Star Realty",
+          "timestamp": "2026-03-09T17:59:59.501Z",
+          "status": "historical_last_sent"
+        },
+        {
+          "direction": "draft",
+          "body": "Martin, despite partial payments, your account still carries a past-due balance of $393.00 (90 days). We need to formalize a repayment arrangement. Please contact us immediately.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_047",
+      "tenant": {
+        "first_name": "Carola",
+        "last_name": "Renee Lewis",
+        "property_name": "2708 Wehnwood Road",
+        "unit": "SS127",
+        "balance": 244,
+        "days_past_due": 23,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 825,
+        "last_payment_amount": 910,
+        "last_payment_date": "03/01/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "draft",
+          "body": "Hi Carola, thank you for your recent payment. Just a reminder that a remaining balance of $244.00 is still outstanding (4 days past due). Please let us know when we can expect the rest.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_048",
+      "tenant": {
+        "first_name": "Gregory",
+        "last_name": "Petersen",
+        "property_name": "8 Passaic St",
+        "unit": "(SFH)",
+        "balance": 210,
+        "days_past_due": 90,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 3000,
+        "last_payment_amount": 3000,
+        "last_payment_date": "03/02/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "out",
+          "body": "Hi Gregory, I wanted to remind you that there’s still an outstanding balance of $210.00. This balance is for w&s.  Please let me know when we can expect to receive your payment. I need your response today. Matan, Tri Star Realty",
+          "timestamp": "2026-03-19T19:09:43.153Z",
+          "status": "historical_last_sent"
+        },
+        {
+          "direction": "draft",
+          "body": "Gregory, despite partial payments, your account still carries a past-due balance of $210.00 (90 days). We need to formalize a repayment arrangement. Please contact us immediately.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_049",
+      "tenant": {
+        "first_name": "Brittany",
+        "last_name": "Harris",
+        "property_name": "2119-2121 W 3rd St",
+        "unit": "8",
+        "balance": 173.5,
+        "days_past_due": 23,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 985,
+        "last_payment_amount": 985,
+        "last_payment_date": "02/24/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "draft",
+          "body": "Hi Brittany, thank you for your recent payment. Just a reminder that a remaining balance of $145.52 is still outstanding (4 days past due). Please let us know when we can expect the rest.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    },
+    {
+      "id": "tenant_case_050",
+      "tenant": {
+        "first_name": "Mariannie",
+        "last_name": "Zayas",
+        "property_name": "429 Jackson Avenue",
+        "unit": "A",
+        "balance": 154,
+        "days_past_due": 30,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 1100,
+        "last_payment_amount": 1160,
+        "last_payment_date": "02/28/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "thread": [
+        {
+          "direction": "draft",
+          "body": "Mariannie, despite partial payments, your account still carries a past-due balance of $413.00 (30 days). We need to formalize a repayment arrangement. Please contact us immediately.",
+          "timestamp": "2026-03-05T16:43:25.462Z",
+          "status": "historical_draft"
+        }
+      ],
+      "note": "Exact Stella tenant context with phone/email removed. Thread contains historical outbound/draft collection language when present."
+    }
+  ]
+}

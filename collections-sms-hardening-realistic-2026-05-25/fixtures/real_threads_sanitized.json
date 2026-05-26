@@ -1,0 +1,3809 @@
+{
+  "generated_at": "2026-05-25T00:00:00-04:00",
+  "redaction": {
+    "kept": [
+      "tenant names",
+      "property names",
+      "unit numbers",
+      "balances",
+      "days past due",
+      "stages",
+      "notes",
+      "message bodies",
+      "timestamps"
+    ],
+    "removed": [
+      "phone numbers",
+      "email addresses",
+      "provider message ids",
+      "session ids",
+      "credentials",
+      "API keys",
+      "bot tokens",
+      "access tokens"
+    ],
+    "note": "Some SMS threads are real Stella/RingCentral/Twilio history but not all are phone-matched to the included tenant context; those are marked tenant_context_source=sample_real_collections_tenant_not_phone_matched."
+  },
+  "examples": [
+    {
+      "id": "case_001",
+      "source": "twilio_messages_backup",
+      "tenant_context_source": "phone_matched",
+      "tenant": {
+        "first_name": "Isaac",
+        "last_name": "Bahary Test",
+        "property_name": "Test Property — SMS Routing",
+        "unit": "1",
+        "balance": 500,
+        "days_past_due": 15,
+        "stage": "11-15_dpd",
+        "track": "standard",
+        "monthly_rent": 1500,
+        "last_payment_amount": 0,
+        "last_payment_date": "",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": "Test tenant for SMS from-number verification"
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "Collections test",
+        "timestamp": "2026-03-16T19:49:49.000Z",
+        "status": "received"
+      },
+      "thread": [
+        {
+          "direction": "in",
+          "body": "1039",
+          "timestamp": "2026-03-16T02:39:25.000Z",
+          "status": "received"
+        },
+        {
+          "direction": "out",
+          "body": "1040",
+          "timestamp": "2026-03-16T02:39:38.231Z",
+          "status": "sent"
+        },
+        {
+          "direction": "out",
+          "body": "Hi, this is the Tri Star Realty maintenance team. We're on our way to TEST Property Unit 1 for your service request. We'll be there shortly.",
+          "timestamp": "2026-03-16T12:16:04.000Z",
+          "status": "delivered"
+        },
+        {
+          "direction": "out",
+          "body": "test",
+          "timestamp": "2026-03-16T19:49:34.000Z",
+          "status": "delivered"
+        },
+        {
+          "direction": "in",
+          "body": "Collections test",
+          "timestamp": "2026-03-16T19:49:49.000Z",
+          "status": "received"
+        },
+        {
+          "direction": "out",
+          "body": "[TEST -- would send to [PHONE_REMOVED]]\nTest from maintenance dashboard - checking from number",
+          "timestamp": "2026-03-16T20:03:40.000Z",
+          "status": "delivered"
+        },
+        {
+          "direction": "out",
+          "body": "maintenance",
+          "timestamp": "2026-03-16T20:18:11.000Z",
+          "status": "delivered"
+        },
+        {
+          "direction": "out",
+          "body": "Collections SMS routing test — verifying from-number is [PHONE_REMOVED].",
+          "timestamp": "2026-03-17T01:33:45.701Z",
+          "status": "sent"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "needs_reply",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_002",
+      "source": "twilio_messages_backup",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Deza'Nasha",
+        "last_name": "Stewart",
+        "property_name": "674-684 Stuyvesant Avenue , 13-15 Christoph Ave",
+        "unit": "13-2",
+        "balance": 5600.98,
+        "days_past_due": 90,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 1066,
+        "last_payment_amount": 150,
+        "last_payment_date": "02/20/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "Look don't any owed anything off my rent",
+        "timestamp": "2026-03-19T20:10:03.000Z",
+        "status": "received"
+      },
+      "thread": [
+        {
+          "direction": "out",
+          "body": "Romeo, you still have an outstanding balance of $288.\n\nPlease let me know when we can expect to receive your payment.\n\nMatan with Tri Star Realty",
+          "timestamp": "2026-03-19T19:39:38.000Z",
+          "status": "delivered"
+        },
+        {
+          "direction": "in",
+          "body": "Look don't any owed anything off my rent",
+          "timestamp": "2026-03-19T20:10:03.000Z",
+          "status": "received"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "needs_reply",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_003",
+      "source": "twilio_messages_backup",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Scott",
+        "last_name": "and Natalie Megna",
+        "property_name": "5626 Peabody Ave",
+        "unit": "(SFH)",
+        "balance": 2380.58,
+        "days_past_due": 30,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 2550,
+        "last_payment_amount": 350,
+        "last_payment_date": "03/08/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": "Scott Megna 5626 Peabody Tenant:\n\tGood morning,Mr Issac I can see on my app that I will be getting the check today I will be paying 2,500 today and tomorrow then 700 every week till zero balance apologizes for the delay but will have this cleared up soon    \n\nIsaac Bahary:\n\t2500 today and 2500 tomorrow, correct?\n\nScott Megna 5626 Peabody Tenant:\n\tNo gonna do 2500 today and Tommy when the check fully clears ,then 700 every week till zero ba\n\tBalance \n\tA combo of the 2 days cause don't know if full check will all clear today when I deposit it \n\nIsaac Bahary:\n\tYou mean 2500 total between today and tomorrow?\n\nScott Megna 5626 Peabody Tenant:\n\tYes sir just cause I don't know if woke check will clear today .then 700 a week till it's cleared ,\n\tAnd that 700 a week starting Fri \n\tSo a total of 3,200 this week"
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "Good afternoon. As soon as possible.",
+        "timestamp": "2026-03-12T19:48:55.173Z",
+        "status": "received"
+      },
+      "thread": [
+        {
+          "direction": "out",
+          "body": "Hi Samantha.\n\nI wanted to remind you that there’s still an outstanding balance of $1,073\n\nPlease let me know when we can expect to receive your payment.\n\nMatan with Tri Star Realty",
+          "timestamp": "2026-03-12T19:48:12.175Z",
+          "status": "sent"
+        },
+        {
+          "direction": "in",
+          "body": "Good afternoon. As soon as possible.",
+          "timestamp": "2026-03-12T19:48:55.173Z",
+          "status": "received"
+        },
+        {
+          "direction": "in",
+          "body": "Good morning. The rent will be paid in full this week.",
+          "timestamp": "2026-03-16T12:11:14.000Z",
+          "status": "received"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "payment_or_promise",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_004",
+      "source": "twilio_messages_backup",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Scott",
+        "last_name": "and Natalie Megna",
+        "property_name": "5626 Peabody Ave",
+        "unit": "(SFH)",
+        "balance": 2380.58,
+        "days_past_due": 30,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 2550,
+        "last_payment_amount": 350,
+        "last_payment_date": "03/08/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": "Scott Megna 5626 Peabody Tenant:\n\tGood morning,Mr Issac I can see on my app that I will be getting the check today I will be paying 2,500 today and tomorrow then 700 every week till zero balance apologizes for the delay but will have this cleared up soon    \n\nIsaac Bahary:\n\t2500 today and 2500 tomorrow, correct?\n\nScott Megna 5626 Peabody Tenant:\n\tNo gonna do 2500 today and Tommy when the check fully clears ,then 700 every week till zero ba\n\tBalance \n\tA combo of the 2 days cause don't know if full check will all clear today when I deposit it \n\nIsaac Bahary:\n\tYou mean 2500 total between today and tomorrow?\n\nScott Megna 5626 Peabody Tenant:\n\tYes sir just cause I don't know if woke check will clear today .then 700 a week till it's cleared ,\n\tAnd that 700 a week starting Fri \n\tSo a total of 3,200 this week"
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "Good morning. The rent will be paid in full this week.",
+        "timestamp": "2026-03-16T12:11:14.000Z",
+        "status": "received"
+      },
+      "thread": [
+        {
+          "direction": "out",
+          "body": "Hi Samantha.\n\nI wanted to remind you that there’s still an outstanding balance of $1,073\n\nPlease let me know when we can expect to receive your payment.\n\nMatan with Tri Star Realty",
+          "timestamp": "2026-03-12T19:48:12.175Z",
+          "status": "sent"
+        },
+        {
+          "direction": "in",
+          "body": "Good afternoon. As soon as possible.",
+          "timestamp": "2026-03-12T19:48:55.173Z",
+          "status": "received"
+        },
+        {
+          "direction": "in",
+          "body": "Good morning. The rent will be paid in full this week.",
+          "timestamp": "2026-03-16T12:11:14.000Z",
+          "status": "received"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "payment_or_promise",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_005",
+      "source": "twilio_messages_backup",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Jennifer",
+        "last_name": "Lively",
+        "property_name": "37 Lighthouse Drive",
+        "unit": "(SFH)",
+        "balance": 1938.22,
+        "days_past_due": 60,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 11,
+        "last_payment_amount": 2632,
+        "last_payment_date": "02/06/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "Hey please stop texting me about rent you will get it when i get it thank you",
+        "timestamp": "2026-03-18T14:00:28.000Z",
+        "status": "received"
+      },
+      "thread": [
+        {
+          "direction": "out",
+          "body": "Hi William.\n\nI wanted to remind you that there’s still an outstanding balance of $1,590.49\n\nPlease let me know when we can expect to receive your payment.\n\nMatan with Tri Star Realty",
+          "timestamp": "2026-03-12T20:47:30.123Z",
+          "status": "sent"
+        },
+        {
+          "direction": "out",
+          "body": "Good morning, just a heads up. If your rent is not paid in full by 03/25, we will proceed with starting the eviction process in accordance with the lease agreement and applicable law.  Please text me once the payment has been made. Thank you.",
+          "timestamp": "2026-03-18T13:55:00.076Z",
+          "status": "sent"
+        },
+        {
+          "direction": "in",
+          "body": "Hey please stop texting me about rent you will get it when i get it thank you",
+          "timestamp": "2026-03-18T14:00:28.000Z",
+          "status": "received"
+        },
+        {
+          "direction": "in",
+          "body": "While you proceed don't forget to let them know about the illegal  you have working for you",
+          "timestamp": "2026-03-18T14:09:26.000Z",
+          "status": "received"
+        },
+        {
+          "direction": "in",
+          "body": "It won't be paid in full on 3/25 so start today",
+          "timestamp": "2026-03-18T14:16:39.000Z",
+          "status": "received"
+        },
+        {
+          "direction": "in",
+          "body": "Comprede Amigo",
+          "timestamp": "2026-03-18T14:17:54.000Z",
+          "status": "received"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "opt_out",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_006",
+      "source": "twilio_messages_backup",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Jennifer",
+        "last_name": "Lively",
+        "property_name": "37 Lighthouse Drive",
+        "unit": "(SFH)",
+        "balance": 1938.22,
+        "days_past_due": 60,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 11,
+        "last_payment_amount": 2632,
+        "last_payment_date": "02/06/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "While you proceed don't forget to let them know about the illegal  you have working for you",
+        "timestamp": "2026-03-18T14:09:26.000Z",
+        "status": "received"
+      },
+      "thread": [
+        {
+          "direction": "out",
+          "body": "Hi William.\n\nI wanted to remind you that there’s still an outstanding balance of $1,590.49\n\nPlease let me know when we can expect to receive your payment.\n\nMatan with Tri Star Realty",
+          "timestamp": "2026-03-12T20:47:30.123Z",
+          "status": "sent"
+        },
+        {
+          "direction": "out",
+          "body": "Good morning, just a heads up. If your rent is not paid in full by 03/25, we will proceed with starting the eviction process in accordance with the lease agreement and applicable law.  Please text me once the payment has been made. Thank you.",
+          "timestamp": "2026-03-18T13:55:00.076Z",
+          "status": "sent"
+        },
+        {
+          "direction": "in",
+          "body": "Hey please stop texting me about rent you will get it when i get it thank you",
+          "timestamp": "2026-03-18T14:00:28.000Z",
+          "status": "received"
+        },
+        {
+          "direction": "in",
+          "body": "While you proceed don't forget to let them know about the illegal  you have working for you",
+          "timestamp": "2026-03-18T14:09:26.000Z",
+          "status": "received"
+        },
+        {
+          "direction": "in",
+          "body": "It won't be paid in full on 3/25 so start today",
+          "timestamp": "2026-03-18T14:16:39.000Z",
+          "status": "received"
+        },
+        {
+          "direction": "in",
+          "body": "Comprede Amigo",
+          "timestamp": "2026-03-18T14:17:54.000Z",
+          "status": "received"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "legal_review",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_007",
+      "source": "twilio_messages_backup",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Jennifer",
+        "last_name": "Lively",
+        "property_name": "37 Lighthouse Drive",
+        "unit": "(SFH)",
+        "balance": 1938.22,
+        "days_past_due": 60,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 11,
+        "last_payment_amount": 2632,
+        "last_payment_date": "02/06/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "It won't be paid in full on 3/25 so start today",
+        "timestamp": "2026-03-18T14:16:39.000Z",
+        "status": "received"
+      },
+      "thread": [
+        {
+          "direction": "out",
+          "body": "Hi William.\n\nI wanted to remind you that there’s still an outstanding balance of $1,590.49\n\nPlease let me know when we can expect to receive your payment.\n\nMatan with Tri Star Realty",
+          "timestamp": "2026-03-12T20:47:30.123Z",
+          "status": "sent"
+        },
+        {
+          "direction": "out",
+          "body": "Good morning, just a heads up. If your rent is not paid in full by 03/25, we will proceed with starting the eviction process in accordance with the lease agreement and applicable law.  Please text me once the payment has been made. Thank you.",
+          "timestamp": "2026-03-18T13:55:00.076Z",
+          "status": "sent"
+        },
+        {
+          "direction": "in",
+          "body": "Hey please stop texting me about rent you will get it when i get it thank you",
+          "timestamp": "2026-03-18T14:00:28.000Z",
+          "status": "received"
+        },
+        {
+          "direction": "in",
+          "body": "While you proceed don't forget to let them know about the illegal  you have working for you",
+          "timestamp": "2026-03-18T14:09:26.000Z",
+          "status": "received"
+        },
+        {
+          "direction": "in",
+          "body": "It won't be paid in full on 3/25 so start today",
+          "timestamp": "2026-03-18T14:16:39.000Z",
+          "status": "received"
+        },
+        {
+          "direction": "in",
+          "body": "Comprede Amigo",
+          "timestamp": "2026-03-18T14:17:54.000Z",
+          "status": "received"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "payment_or_promise",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_008",
+      "source": "twilio_messages_backup",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Jennifer",
+        "last_name": "Lively",
+        "property_name": "37 Lighthouse Drive",
+        "unit": "(SFH)",
+        "balance": 1938.22,
+        "days_past_due": 60,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 11,
+        "last_payment_amount": 2632,
+        "last_payment_date": "02/06/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "Comprede Amigo",
+        "timestamp": "2026-03-18T14:17:54.000Z",
+        "status": "received"
+      },
+      "thread": [
+        {
+          "direction": "out",
+          "body": "Good morning, just a heads up. If your rent is not paid in full by 03/25, we will proceed with starting the eviction process in accordance with the lease agreement and applicable law.  Please text me once the payment has been made. Thank you.",
+          "timestamp": "2026-03-18T13:55:00.076Z",
+          "status": "sent"
+        },
+        {
+          "direction": "in",
+          "body": "Hey please stop texting me about rent you will get it when i get it thank you",
+          "timestamp": "2026-03-18T14:00:28.000Z",
+          "status": "received"
+        },
+        {
+          "direction": "in",
+          "body": "While you proceed don't forget to let them know about the illegal  you have working for you",
+          "timestamp": "2026-03-18T14:09:26.000Z",
+          "status": "received"
+        },
+        {
+          "direction": "in",
+          "body": "It won't be paid in full on 3/25 so start today",
+          "timestamp": "2026-03-18T14:16:39.000Z",
+          "status": "received"
+        },
+        {
+          "direction": "in",
+          "body": "Comprede Amigo",
+          "timestamp": "2026-03-18T14:17:54.000Z",
+          "status": "received"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "needs_reply",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_009",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Ziara",
+        "last_name": "Blackwell",
+        "property_name": "2119-2121 W 3rd St",
+        "unit": "7",
+        "balance": 1109.32,
+        "days_past_due": 90,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 79,
+        "last_payment_amount": 1150,
+        "last_payment_date": "03/03/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "Hi of course, my roommate's name is Victoria Rolon and my co-signer is Juan J. Salomon Dominguez",
+        "timestamp": "2026-02-24T17:21:34.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "out",
+          "body": "Hi Valeria, I received your application. I am now waiting for the cosigner and your roommate to apply. Please confirm their names. Thank you.",
+          "timestamp": "2026-02-24T15:17:25.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "Hi of course, my roommate's name is Victoria Rolon and my co-signer is Juan J. Salomon Dominguez",
+          "timestamp": "2026-02-24T17:21:34.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "Thank you. I will get back to you once they apply and I review their applications.",
+          "timestamp": "2026-02-24T17:36:16.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "Hi Matan, my friend Victoria who is going to be my roommate is just waiting for a confirmation so that they can verify her identity. As soon as they verify her identity she is going to finish application.",
+          "timestamp": "2026-02-28T23:34:31.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "Any update?",
+          "timestamp": "2026-03-03T23:06:28.000Z",
+          "status": "Delivered"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "needs_reply",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_010",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Ziara",
+        "last_name": "Blackwell",
+        "property_name": "2119-2121 W 3rd St",
+        "unit": "7",
+        "balance": 1109.32,
+        "days_past_due": 90,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 79,
+        "last_payment_amount": 1150,
+        "last_payment_date": "03/03/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "Hi Matan, my friend Victoria who is going to be my roommate is just waiting for a confirmation so that they can verify her identity. As soon as they verify her identity she is going to finish application.",
+        "timestamp": "2026-02-28T23:34:31.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "out",
+          "body": "Hi Valeria, I received your application. I am now waiting for the cosigner and your roommate to apply. Please confirm their names. Thank you.",
+          "timestamp": "2026-02-24T15:17:25.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "Hi of course, my roommate's name is Victoria Rolon and my co-signer is Juan J. Salomon Dominguez",
+          "timestamp": "2026-02-24T17:21:34.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "Thank you. I will get back to you once they apply and I review their applications.",
+          "timestamp": "2026-02-24T17:36:16.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "Hi Matan, my friend Victoria who is going to be my roommate is just waiting for a confirmation so that they can verify her identity. As soon as they verify her identity she is going to finish application.",
+          "timestamp": "2026-02-28T23:34:31.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "Any update?",
+          "timestamp": "2026-03-03T23:06:28.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "No response yet, she was going to call again today",
+          "timestamp": "2026-03-04T17:11:27.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "Ok, I will draft the lease for you. Rent is $1,000 + $75 + $60. 12-month lease. Move-in date is May 1st.",
+          "timestamp": "2026-03-18T15:23:22.000Z",
+          "status": "Delivered"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "needs_reply",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_011",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Ziara",
+        "last_name": "Blackwell",
+        "property_name": "2119-2121 W 3rd St",
+        "unit": "7",
+        "balance": 1109.32,
+        "days_past_due": 90,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 79,
+        "last_payment_amount": 1150,
+        "last_payment_date": "03/03/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "No response yet, she was going to call again today",
+        "timestamp": "2026-03-04T17:11:27.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "in",
+          "body": "Hi of course, my roommate's name is Victoria Rolon and my co-signer is Juan J. Salomon Dominguez",
+          "timestamp": "2026-02-24T17:21:34.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "Thank you. I will get back to you once they apply and I review their applications.",
+          "timestamp": "2026-02-24T17:36:16.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "Hi Matan, my friend Victoria who is going to be my roommate is just waiting for a confirmation so that they can verify her identity. As soon as they verify her identity she is going to finish application.",
+          "timestamp": "2026-02-28T23:34:31.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "Any update?",
+          "timestamp": "2026-03-03T23:06:28.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "No response yet, she was going to call again today",
+          "timestamp": "2026-03-04T17:11:27.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "Ok, I will draft the lease for you. Rent is $1,000 + $75 + $60. 12-month lease. Move-in date is May 1st.",
+          "timestamp": "2026-03-18T15:23:22.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "out",
+          "body": "Please fill out the form in the link below and kindly send me a message once you've completed it.",
+          "timestamp": "2026-03-18T15:31:20.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "out",
+          "body": "Here is the link for our tenant information sheet:\nhttps://docs.google.com/forms/d/e/[LONG_ID_REMOVED]/viewform",
+          "timestamp": "2026-03-18T15:31:24.000Z",
+          "status": "Delivered"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "needs_reply",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_012",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Ziara",
+        "last_name": "Blackwell",
+        "property_name": "2119-2121 W 3rd St",
+        "unit": "7",
+        "balance": 1109.32,
+        "days_past_due": 90,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 79,
+        "last_payment_amount": 1150,
+        "last_payment_date": "03/03/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "I just sent mine, I replied to the email sent to me earlier today",
+        "timestamp": "2026-03-18T18:38:43.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "out",
+          "body": "Ok, I will draft the lease for you. Rent is $1,000 + $75 + $60. 12-month lease. Move-in date is May 1st.",
+          "timestamp": "2026-03-18T15:23:22.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "out",
+          "body": "Please fill out the form in the link below and kindly send me a message once you've completed it.",
+          "timestamp": "2026-03-18T15:31:20.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "out",
+          "body": "Here is the link for our tenant information sheet:\nhttps://docs.google.com/forms/d/e/[LONG_ID_REMOVED]/viewform",
+          "timestamp": "2026-03-18T15:31:24.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "out",
+          "body": "Ok, I have Victoria's photo ID. I am now waiting for Juan's and Valeria's photo IDs.",
+          "timestamp": "2026-03-18T18:33:30.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "I just sent mine, I replied to the email sent to me earlier today",
+          "timestamp": "2026-03-18T18:38:43.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "Received, thank you.",
+          "timestamp": "2026-03-18T18:40:59.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "I just sent my dads (Juan)",
+          "timestamp": "2026-03-18T18:41:24.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "Thank you",
+          "timestamp": "2026-03-18T18:42:22.000Z",
+          "status": "Delivered"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "payment_or_promise",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_013",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Ziara",
+        "last_name": "Blackwell",
+        "property_name": "2119-2121 W 3rd St",
+        "unit": "7",
+        "balance": 1109.32,
+        "days_past_due": 90,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 79,
+        "last_payment_amount": 1150,
+        "last_payment_date": "03/03/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "I just sent my dads (Juan)",
+        "timestamp": "2026-03-18T18:41:24.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "out",
+          "body": "Here is the link for our tenant information sheet:\nhttps://docs.google.com/forms/d/e/[LONG_ID_REMOVED]/viewform",
+          "timestamp": "2026-03-18T15:31:24.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "out",
+          "body": "Ok, I have Victoria's photo ID. I am now waiting for Juan's and Valeria's photo IDs.",
+          "timestamp": "2026-03-18T18:33:30.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "I just sent mine, I replied to the email sent to me earlier today",
+          "timestamp": "2026-03-18T18:38:43.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "Received, thank you.",
+          "timestamp": "2026-03-18T18:40:59.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "I just sent my dads (Juan)",
+          "timestamp": "2026-03-18T18:41:24.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "Thank you",
+          "timestamp": "2026-03-18T18:42:22.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "out",
+          "body": "I sent the lease for your review and signatures.",
+          "timestamp": "2026-03-18T18:58:07.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "out",
+          "body": "Your name please",
+          "timestamp": "2026-03-18T19:04:26.000Z",
+          "status": "Delivered"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "payment_or_promise",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_014",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Ziara",
+        "last_name": "Blackwell",
+        "property_name": "2119-2121 W 3rd St",
+        "unit": "7",
+        "balance": 1109.32,
+        "days_past_due": 90,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 79,
+        "last_payment_amount": 1150,
+        "last_payment_date": "03/03/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "I was also wondering I saw that the landlord could come in the apartment without a notice I was just wondering if they could give us a notice for non-emergency situations since it is two girls living in the apartment",
+        "timestamp": "2026-03-18T21:25:43.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "out",
+          "body": "Your name please",
+          "timestamp": "2026-03-18T19:04:26.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "out",
+          "body": "Sure. Could you please send me the photo ID and her email address?",
+          "timestamp": "2026-03-18T19:12:49.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "out",
+          "body": "Sent",
+          "timestamp": "2026-03-18T19:57:57.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "out",
+          "body": "Thank you for checking.\n\nSmall thumb tacks or similar items used to hang lightweight decorations are generally fine, as long as they only leave minor pinholes. Any damage beyond normal wear and tear, or larger holes, would need to be repaired by the tenant before move-out.\n\nPlease avoid drilling or making larger holes in the walls without prior written approval.",
+          "timestamp": "2026-03-18T21:09:03.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "I was also wondering I saw that the landlord could come in the apartment without a notice I was just wondering if they could give us a notice for non-emergency situations since it is two girls living in the apartment",
+          "timestamp": "2026-03-18T21:25:43.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "Hi, 100%. We always verify that it's safe to enter before we go inside the unit.",
+          "timestamp": "2026-03-23T13:42:54.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "out",
+          "body": "Good morning. You can submit the security deposit via Zelle or with a money order. Please let me know your preferred payment method.",
+          "timestamp": "2026-03-24T13:26:40.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "out",
+          "body": "Please send $1 first to test it, and let me know once you've sent it.\n\nZelle info:  tristareastcoastllc",
+          "timestamp": "2026-03-24T17:40:59.000Z",
+          "status": "Delivered"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "needs_reply",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_015",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Ziara",
+        "last_name": "Blackwell",
+        "property_name": "2119-2121 W 3rd St",
+        "unit": "7",
+        "balance": 1109.32,
+        "days_past_due": 90,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 79,
+        "last_payment_amount": 1150,
+        "last_payment_date": "03/03/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "I just sent the $1 to test it",
+        "timestamp": "2026-03-24T17:50:00.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "out",
+          "body": "Hi, 100%. We always verify that it's safe to enter before we go inside the unit.",
+          "timestamp": "2026-03-23T13:42:54.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "out",
+          "body": "Good morning. You can submit the security deposit via Zelle or with a money order. Please let me know your preferred payment method.",
+          "timestamp": "2026-03-24T13:26:40.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "out",
+          "body": "Please send $1 first to test it, and let me know once you've sent it.\n\nZelle info:  tristareastcoastllc",
+          "timestamp": "2026-03-24T17:40:59.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "out",
+          "body": "No. Please try @tristareastcoastllc",
+          "timestamp": "2026-03-24T17:46:24.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "I just sent the $1 to test it",
+          "timestamp": "2026-03-24T17:50:00.000Z",
+          "status": "Received"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "payment_or_promise",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_016",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Christopher",
+        "last_name": "Williams",
+        "property_name": "12 Danbury Street Southeast",
+        "unit": "3",
+        "balance": 49.8,
+        "days_past_due": 23,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 996,
+        "last_payment_amount": 746,
+        "last_payment_date": "03/06/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "This is Victoria, I saw that I had a missed call from you and was wondering if the landlord had gotten back to you?",
+        "timestamp": "2026-02-23T19:10:49.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "in",
+          "body": "This is Victoria, I saw that I had a missed call from you and was wondering if the landlord had gotten back to you?",
+          "timestamp": "2026-02-23T19:10:49.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "Hi Victoria, thank you for reaching out. Yes, the landlord did get back to me. He is willing to rent a unit at College Park for 2 students with a minimum 12-month lease.\n\nThe rent terms are as follows:\n• $1,000 monthly rent\n• $75 water & sewer\n• $60 internet\n• Tenant(s) will need to place gas and electric service in their name.\n\nPlease review the rental requirements below:",
+          "timestamp": "2026-02-23T19:25:30.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "out",
+          "body": "• All tenants 18 years of age or older must complete a credit check, background check, and income verification. A credit score of 630 or higher is required.\n• Applications with any prior eviction history will not be accepted.\n• To qualify financially, gross monthly income must be at least $2,500, averaged over the last 12 months.\n• No smoking of any kind is permitted on the property.\n• Upon signing the lease, the first month’s rent and full security deposit will be due.\n\nHere is the application link:\nhttps://apply.link/Q9tkkL4\n\nPlease let me know if you have any questions or once the application has been submitted.",
+          "timestamp": "2026-02-23T19:25:43.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "Hi good afternoon, we are still interested in moving forward with signing the lease. Our preferred move in date is May 1st and we would like to choose the unit ourselves. Thank you",
+          "timestamp": "2026-03-05T21:21:10.000Z",
+          "status": "Received"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "needs_reply",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_017",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Christopher",
+        "last_name": "Williams",
+        "property_name": "12 Danbury Street Southeast",
+        "unit": "3",
+        "balance": 49.8,
+        "days_past_due": 23,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 996,
+        "last_payment_amount": 746,
+        "last_payment_date": "03/06/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "Hi good afternoon, we are still interested in moving forward with signing the lease. Our preferred move in date is May 1st and we would like to choose the unit ourselves. Thank you",
+        "timestamp": "2026-03-05T21:21:10.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "in",
+          "body": "This is Victoria, I saw that I had a missed call from you and was wondering if the landlord had gotten back to you?",
+          "timestamp": "2026-02-23T19:10:49.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "Hi Victoria, thank you for reaching out. Yes, the landlord did get back to me. He is willing to rent a unit at College Park for 2 students with a minimum 12-month lease.\n\nThe rent terms are as follows:\n• $1,000 monthly rent\n• $75 water & sewer\n• $60 internet\n• Tenant(s) will need to place gas and electric service in their name.\n\nPlease review the rental requirements below:",
+          "timestamp": "2026-02-23T19:25:30.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "out",
+          "body": "• All tenants 18 years of age or older must complete a credit check, background check, and income verification. A credit score of 630 or higher is required.\n• Applications with any prior eviction history will not be accepted.\n• To qualify financially, gross monthly income must be at least $2,500, averaged over the last 12 months.\n• No smoking of any kind is permitted on the property.\n• Upon signing the lease, the first month’s rent and full security deposit will be due.\n\nHere is the application link:\nhttps://apply.link/Q9tkkL4\n\nPlease let me know if you have any questions or once the application has been submitted.",
+          "timestamp": "2026-02-23T19:25:43.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "Hi good afternoon, we are still interested in moving forward with signing the lease. Our preferred move in date is May 1st and we would like to choose the unit ourselves. Thank you",
+          "timestamp": "2026-03-05T21:21:10.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Okay, thank you",
+          "timestamp": "2026-03-05T21:25:32.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Good afternoon we toured the apartment and we really liked unit 104",
+          "timestamp": "2026-03-17T21:05:12.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Ok thank you",
+          "timestamp": "2026-03-18T15:23:52.000Z",
+          "status": "Received"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "needs_reply",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_018",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Christopher",
+        "last_name": "Williams",
+        "property_name": "12 Danbury Street Southeast",
+        "unit": "3",
+        "balance": 49.8,
+        "days_past_due": 23,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 996,
+        "last_payment_amount": 746,
+        "last_payment_date": "03/06/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "Okay, thank you",
+        "timestamp": "2026-03-05T21:25:32.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "in",
+          "body": "This is Victoria, I saw that I had a missed call from you and was wondering if the landlord had gotten back to you?",
+          "timestamp": "2026-02-23T19:10:49.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "Hi Victoria, thank you for reaching out. Yes, the landlord did get back to me. He is willing to rent a unit at College Park for 2 students with a minimum 12-month lease.\n\nThe rent terms are as follows:\n• $1,000 monthly rent\n• $75 water & sewer\n• $60 internet\n• Tenant(s) will need to place gas and electric service in their name.\n\nPlease review the rental requirements below:",
+          "timestamp": "2026-02-23T19:25:30.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "out",
+          "body": "• All tenants 18 years of age or older must complete a credit check, background check, and income verification. A credit score of 630 or higher is required.\n• Applications with any prior eviction history will not be accepted.\n• To qualify financially, gross monthly income must be at least $2,500, averaged over the last 12 months.\n• No smoking of any kind is permitted on the property.\n• Upon signing the lease, the first month’s rent and full security deposit will be due.\n\nHere is the application link:\nhttps://apply.link/Q9tkkL4\n\nPlease let me know if you have any questions or once the application has been submitted.",
+          "timestamp": "2026-02-23T19:25:43.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "Hi good afternoon, we are still interested in moving forward with signing the lease. Our preferred move in date is May 1st and we would like to choose the unit ourselves. Thank you",
+          "timestamp": "2026-03-05T21:21:10.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Okay, thank you",
+          "timestamp": "2026-03-05T21:25:32.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Good afternoon we toured the apartment and we really liked unit 104",
+          "timestamp": "2026-03-17T21:05:12.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Ok thank you",
+          "timestamp": "2026-03-18T15:23:52.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "We have both completed the google form",
+          "timestamp": "2026-03-18T17:57:10.000Z",
+          "status": "Received"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "needs_reply",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_019",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Christopher",
+        "last_name": "Williams",
+        "property_name": "12 Danbury Street Southeast",
+        "unit": "3",
+        "balance": 49.8,
+        "days_past_due": 23,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 996,
+        "last_payment_amount": 746,
+        "last_payment_date": "03/06/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "Good afternoon we toured the apartment and we really liked unit 104",
+        "timestamp": "2026-03-17T21:05:12.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "out",
+          "body": "Hi Victoria, thank you for reaching out. Yes, the landlord did get back to me. He is willing to rent a unit at College Park for 2 students with a minimum 12-month lease.\n\nThe rent terms are as follows:\n• $1,000 monthly rent\n• $75 water & sewer\n• $60 internet\n• Tenant(s) will need to place gas and electric service in their name.\n\nPlease review the rental requirements below:",
+          "timestamp": "2026-02-23T19:25:30.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "out",
+          "body": "• All tenants 18 years of age or older must complete a credit check, background check, and income verification. A credit score of 630 or higher is required.\n• Applications with any prior eviction history will not be accepted.\n• To qualify financially, gross monthly income must be at least $2,500, averaged over the last 12 months.\n• No smoking of any kind is permitted on the property.\n• Upon signing the lease, the first month’s rent and full security deposit will be due.\n\nHere is the application link:\nhttps://apply.link/Q9tkkL4\n\nPlease let me know if you have any questions or once the application has been submitted.",
+          "timestamp": "2026-02-23T19:25:43.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "Hi good afternoon, we are still interested in moving forward with signing the lease. Our preferred move in date is May 1st and we would like to choose the unit ourselves. Thank you",
+          "timestamp": "2026-03-05T21:21:10.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Okay, thank you",
+          "timestamp": "2026-03-05T21:25:32.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Good afternoon we toured the apartment and we really liked unit 104",
+          "timestamp": "2026-03-17T21:05:12.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Ok thank you",
+          "timestamp": "2026-03-18T15:23:52.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "We have both completed the google form",
+          "timestamp": "2026-03-18T17:57:10.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "I haven't received a email can we please conform the email you have for me?",
+          "timestamp": "2026-03-18T19:00:56.000Z",
+          "status": "Received"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "needs_reply",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_020",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Christopher",
+        "last_name": "Williams",
+        "property_name": "12 Danbury Street Southeast",
+        "unit": "3",
+        "balance": 49.8,
+        "days_past_due": 23,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 996,
+        "last_payment_amount": 746,
+        "last_payment_date": "03/06/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "Ok thank you",
+        "timestamp": "2026-03-18T15:23:52.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "out",
+          "body": "• All tenants 18 years of age or older must complete a credit check, background check, and income verification. A credit score of 630 or higher is required.\n• Applications with any prior eviction history will not be accepted.\n• To qualify financially, gross monthly income must be at least $2,500, averaged over the last 12 months.\n• No smoking of any kind is permitted on the property.\n• Upon signing the lease, the first month’s rent and full security deposit will be due.\n\nHere is the application link:\nhttps://apply.link/Q9tkkL4\n\nPlease let me know if you have any questions or once the application has been submitted.",
+          "timestamp": "2026-02-23T19:25:43.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "Hi good afternoon, we are still interested in moving forward with signing the lease. Our preferred move in date is May 1st and we would like to choose the unit ourselves. Thank you",
+          "timestamp": "2026-03-05T21:21:10.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Okay, thank you",
+          "timestamp": "2026-03-05T21:25:32.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Good afternoon we toured the apartment and we really liked unit 104",
+          "timestamp": "2026-03-17T21:05:12.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Ok thank you",
+          "timestamp": "2026-03-18T15:23:52.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "We have both completed the google form",
+          "timestamp": "2026-03-18T17:57:10.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "I haven't received a email can we please conform the email you have for me?",
+          "timestamp": "2026-03-18T19:00:56.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "That's not my email, my email is [EMAIL_REMOVED]",
+          "timestamp": "2026-03-18T19:03:52.000Z",
+          "status": "Received"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "needs_reply",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_021",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Christopher",
+        "last_name": "Williams",
+        "property_name": "12 Danbury Street Southeast",
+        "unit": "3",
+        "balance": 49.8,
+        "days_past_due": 23,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 996,
+        "last_payment_amount": 746,
+        "last_payment_date": "03/06/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "We have both completed the google form",
+        "timestamp": "2026-03-18T17:57:10.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "in",
+          "body": "Hi good afternoon, we are still interested in moving forward with signing the lease. Our preferred move in date is May 1st and we would like to choose the unit ourselves. Thank you",
+          "timestamp": "2026-03-05T21:21:10.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Okay, thank you",
+          "timestamp": "2026-03-05T21:25:32.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Good afternoon we toured the apartment and we really liked unit 104",
+          "timestamp": "2026-03-17T21:05:12.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Ok thank you",
+          "timestamp": "2026-03-18T15:23:52.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "We have both completed the google form",
+          "timestamp": "2026-03-18T17:57:10.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "I haven't received a email can we please conform the email you have for me?",
+          "timestamp": "2026-03-18T19:00:56.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "That's not my email, my email is [EMAIL_REMOVED]",
+          "timestamp": "2026-03-18T19:03:52.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Victoria Rolon",
+          "timestamp": "2026-03-18T19:04:44.000Z",
+          "status": "Received"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "needs_reply",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_022",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Christopher",
+        "last_name": "Williams",
+        "property_name": "12 Danbury Street Southeast",
+        "unit": "3",
+        "balance": 49.8,
+        "days_past_due": 23,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 996,
+        "last_payment_amount": 746,
+        "last_payment_date": "03/06/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "I haven't received a email can we please conform the email you have for me?",
+        "timestamp": "2026-03-18T19:00:56.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "in",
+          "body": "Okay, thank you",
+          "timestamp": "2026-03-05T21:25:32.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Good afternoon we toured the apartment and we really liked unit 104",
+          "timestamp": "2026-03-17T21:05:12.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Ok thank you",
+          "timestamp": "2026-03-18T15:23:52.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "We have both completed the google form",
+          "timestamp": "2026-03-18T17:57:10.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "I haven't received a email can we please conform the email you have for me?",
+          "timestamp": "2026-03-18T19:00:56.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "That's not my email, my email is [EMAIL_REMOVED]",
+          "timestamp": "2026-03-18T19:03:52.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Victoria Rolon",
+          "timestamp": "2026-03-18T19:04:44.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Could the lease also be sent to Veronica Gonzalez as she is my co-signer",
+          "timestamp": "2026-03-18T19:08:25.000Z",
+          "status": "Received"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "needs_reply",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_023",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Christopher",
+        "last_name": "Williams",
+        "property_name": "12 Danbury Street Southeast",
+        "unit": "3",
+        "balance": 49.8,
+        "days_past_due": 23,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 996,
+        "last_payment_amount": 746,
+        "last_payment_date": "03/06/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "That's not my email, my email is [EMAIL_REMOVED]",
+        "timestamp": "2026-03-18T19:03:52.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "in",
+          "body": "Good afternoon we toured the apartment and we really liked unit 104",
+          "timestamp": "2026-03-17T21:05:12.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Ok thank you",
+          "timestamp": "2026-03-18T15:23:52.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "We have both completed the google form",
+          "timestamp": "2026-03-18T17:57:10.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "I haven't received a email can we please conform the email you have for me?",
+          "timestamp": "2026-03-18T19:00:56.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "That's not my email, my email is [EMAIL_REMOVED]",
+          "timestamp": "2026-03-18T19:03:52.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Victoria Rolon",
+          "timestamp": "2026-03-18T19:04:44.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Could the lease also be sent to Veronica Gonzalez as she is my co-signer",
+          "timestamp": "2026-03-18T19:08:25.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "[EMAIL_REMOVED]",
+          "timestamp": "2026-03-18T19:18:15.000Z",
+          "status": "Received"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "needs_reply",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_024",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Christopher",
+        "last_name": "Williams",
+        "property_name": "12 Danbury Street Southeast",
+        "unit": "3",
+        "balance": 49.8,
+        "days_past_due": 23,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 996,
+        "last_payment_amount": 746,
+        "last_payment_date": "03/06/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "Victoria Rolon",
+        "timestamp": "2026-03-18T19:04:44.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "in",
+          "body": "Ok thank you",
+          "timestamp": "2026-03-18T15:23:52.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "We have both completed the google form",
+          "timestamp": "2026-03-18T17:57:10.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "I haven't received a email can we please conform the email you have for me?",
+          "timestamp": "2026-03-18T19:00:56.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "That's not my email, my email is [EMAIL_REMOVED]",
+          "timestamp": "2026-03-18T19:03:52.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Victoria Rolon",
+          "timestamp": "2026-03-18T19:04:44.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Could the lease also be sent to Veronica Gonzalez as she is my co-signer",
+          "timestamp": "2026-03-18T19:08:25.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "[EMAIL_REMOVED]",
+          "timestamp": "2026-03-18T19:18:15.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "I had a question regarding the lease as I am slightly confused as to why the tenants would have to pay for professional service on the hvac?",
+          "timestamp": "2026-03-18T20:15:29.000Z",
+          "status": "Received"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "needs_reply",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_025",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Christopher",
+        "last_name": "Williams",
+        "property_name": "12 Danbury Street Southeast",
+        "unit": "3",
+        "balance": 49.8,
+        "days_past_due": 23,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 996,
+        "last_payment_amount": 746,
+        "last_payment_date": "03/06/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "Could the lease also be sent to Veronica Gonzalez as she is my co-signer",
+        "timestamp": "2026-03-18T19:08:25.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "in",
+          "body": "We have both completed the google form",
+          "timestamp": "2026-03-18T17:57:10.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "I haven't received a email can we please conform the email you have for me?",
+          "timestamp": "2026-03-18T19:00:56.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "That's not my email, my email is [EMAIL_REMOVED]",
+          "timestamp": "2026-03-18T19:03:52.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Victoria Rolon",
+          "timestamp": "2026-03-18T19:04:44.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Could the lease also be sent to Veronica Gonzalez as she is my co-signer",
+          "timestamp": "2026-03-18T19:08:25.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "[EMAIL_REMOVED]",
+          "timestamp": "2026-03-18T19:18:15.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "I had a question regarding the lease as I am slightly confused as to why the tenants would have to pay for professional service on the hvac?",
+          "timestamp": "2026-03-18T20:15:29.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "also what calls for unwarranted or unecessary maintenance service",
+          "timestamp": "2026-03-18T20:16:34.000Z",
+          "status": "Received"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "payment_or_promise",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_026",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Christopher",
+        "last_name": "Williams",
+        "property_name": "12 Danbury Street Southeast",
+        "unit": "3",
+        "balance": 49.8,
+        "days_past_due": 23,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 996,
+        "last_payment_amount": 746,
+        "last_payment_date": "03/06/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "[EMAIL_REMOVED]",
+        "timestamp": "2026-03-18T19:18:15.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "in",
+          "body": "I haven't received a email can we please conform the email you have for me?",
+          "timestamp": "2026-03-18T19:00:56.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "That's not my email, my email is [EMAIL_REMOVED]",
+          "timestamp": "2026-03-18T19:03:52.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Victoria Rolon",
+          "timestamp": "2026-03-18T19:04:44.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Could the lease also be sent to Veronica Gonzalez as she is my co-signer",
+          "timestamp": "2026-03-18T19:08:25.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "[EMAIL_REMOVED]",
+          "timestamp": "2026-03-18T19:18:15.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "I had a question regarding the lease as I am slightly confused as to why the tenants would have to pay for professional service on the hvac?",
+          "timestamp": "2026-03-18T20:15:29.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "also what calls for unwarranted or unecessary maintenance service",
+          "timestamp": "2026-03-18T20:16:34.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Another question I had was about having things on walls as I know that the lease says that we cannot drill into the walls but are we allowed to use thumb tacks to hang things up",
+          "timestamp": "2026-03-18T20:38:25.000Z",
+          "status": "Received"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "needs_reply",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_027",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Christopher",
+        "last_name": "Williams",
+        "property_name": "12 Danbury Street Southeast",
+        "unit": "3",
+        "balance": 49.8,
+        "days_past_due": 23,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 996,
+        "last_payment_amount": 746,
+        "last_payment_date": "03/06/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "I had a question regarding the lease as I am slightly confused as to why the tenants would have to pay for professional service on the hvac?",
+        "timestamp": "2026-03-18T20:15:29.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "in",
+          "body": "That's not my email, my email is [EMAIL_REMOVED]",
+          "timestamp": "2026-03-18T19:03:52.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Victoria Rolon",
+          "timestamp": "2026-03-18T19:04:44.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Could the lease also be sent to Veronica Gonzalez as she is my co-signer",
+          "timestamp": "2026-03-18T19:08:25.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "[EMAIL_REMOVED]",
+          "timestamp": "2026-03-18T19:18:15.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "I had a question regarding the lease as I am slightly confused as to why the tenants would have to pay for professional service on the hvac?",
+          "timestamp": "2026-03-18T20:15:29.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "also what calls for unwarranted or unecessary maintenance service",
+          "timestamp": "2026-03-18T20:16:34.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Another question I had was about having things on walls as I know that the lease says that we cannot drill into the walls but are we allowed to use thumb tacks to hang things up",
+          "timestamp": "2026-03-18T20:38:25.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Ok thank you",
+          "timestamp": "2026-03-18T21:09:36.000Z",
+          "status": "Received"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "needs_reply",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_028",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Christopher",
+        "last_name": "Williams",
+        "property_name": "12 Danbury Street Southeast",
+        "unit": "3",
+        "balance": 49.8,
+        "days_past_due": 23,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 996,
+        "last_payment_amount": 746,
+        "last_payment_date": "03/06/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "also what calls for unwarranted or unecessary maintenance service",
+        "timestamp": "2026-03-18T20:16:34.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "in",
+          "body": "Victoria Rolon",
+          "timestamp": "2026-03-18T19:04:44.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Could the lease also be sent to Veronica Gonzalez as she is my co-signer",
+          "timestamp": "2026-03-18T19:08:25.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "[EMAIL_REMOVED]",
+          "timestamp": "2026-03-18T19:18:15.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "I had a question regarding the lease as I am slightly confused as to why the tenants would have to pay for professional service on the hvac?",
+          "timestamp": "2026-03-18T20:15:29.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "also what calls for unwarranted or unecessary maintenance service",
+          "timestamp": "2026-03-18T20:16:34.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Another question I had was about having things on walls as I know that the lease says that we cannot drill into the walls but are we allowed to use thumb tacks to hang things up",
+          "timestamp": "2026-03-18T20:38:25.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Ok thank you",
+          "timestamp": "2026-03-18T21:09:36.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Good afternoon, we would prefer to send the money through Zelle to whom should we send it to?",
+          "timestamp": "2026-03-24T17:38:51.000Z",
+          "status": "Received"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "needs_reply",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_029",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Christopher",
+        "last_name": "Williams",
+        "property_name": "12 Danbury Street Southeast",
+        "unit": "3",
+        "balance": 49.8,
+        "days_past_due": 23,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 996,
+        "last_payment_amount": 746,
+        "last_payment_date": "03/06/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "Another question I had was about having things on walls as I know that the lease says that we cannot drill into the walls but are we allowed to use thumb tacks to hang things up",
+        "timestamp": "2026-03-18T20:38:25.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "in",
+          "body": "Could the lease also be sent to Veronica Gonzalez as she is my co-signer",
+          "timestamp": "2026-03-18T19:08:25.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "[EMAIL_REMOVED]",
+          "timestamp": "2026-03-18T19:18:15.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "I had a question regarding the lease as I am slightly confused as to why the tenants would have to pay for professional service on the hvac?",
+          "timestamp": "2026-03-18T20:15:29.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "also what calls for unwarranted or unecessary maintenance service",
+          "timestamp": "2026-03-18T20:16:34.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Another question I had was about having things on walls as I know that the lease says that we cannot drill into the walls but are we allowed to use thumb tacks to hang things up",
+          "timestamp": "2026-03-18T20:38:25.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Ok thank you",
+          "timestamp": "2026-03-18T21:09:36.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Good afternoon, we would prefer to send the money through Zelle to whom should we send it to?",
+          "timestamp": "2026-03-24T17:38:51.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Is it ok if we do it separately like 500 each as there is a limit on Zelle",
+          "timestamp": "2026-03-24T17:42:26.000Z",
+          "status": "Received"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "needs_reply",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_030",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Christopher",
+        "last_name": "Williams",
+        "property_name": "12 Danbury Street Southeast",
+        "unit": "3",
+        "balance": 49.8,
+        "days_past_due": 23,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 996,
+        "last_payment_amount": 746,
+        "last_payment_date": "03/06/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "Good afternoon, we would prefer to send the money through Zelle to whom should we send it to?",
+        "timestamp": "2026-03-24T17:38:51.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "in",
+          "body": "I had a question regarding the lease as I am slightly confused as to why the tenants would have to pay for professional service on the hvac?",
+          "timestamp": "2026-03-18T20:15:29.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "also what calls for unwarranted or unecessary maintenance service",
+          "timestamp": "2026-03-18T20:16:34.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Another question I had was about having things on walls as I know that the lease says that we cannot drill into the walls but are we allowed to use thumb tacks to hang things up",
+          "timestamp": "2026-03-18T20:38:25.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Ok thank you",
+          "timestamp": "2026-03-18T21:09:36.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Good afternoon, we would prefer to send the money through Zelle to whom should we send it to?",
+          "timestamp": "2026-03-24T17:38:51.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Is it ok if we do it separately like 500 each as there is a limit on Zelle",
+          "timestamp": "2026-03-24T17:42:26.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Do you have the QR code for the Zelle account as neither of us are able to find the account",
+          "timestamp": "2026-03-24T17:45:55.000Z",
+          "status": "Received"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "payment_or_promise",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_031",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Christopher",
+        "last_name": "Williams",
+        "property_name": "12 Danbury Street Southeast",
+        "unit": "3",
+        "balance": 49.8,
+        "days_past_due": 23,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 996,
+        "last_payment_amount": 746,
+        "last_payment_date": "03/06/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "Is it ok if we do it separately like 500 each as there is a limit on Zelle",
+        "timestamp": "2026-03-24T17:42:26.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "in",
+          "body": "also what calls for unwarranted or unecessary maintenance service",
+          "timestamp": "2026-03-18T20:16:34.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Another question I had was about having things on walls as I know that the lease says that we cannot drill into the walls but are we allowed to use thumb tacks to hang things up",
+          "timestamp": "2026-03-18T20:38:25.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Ok thank you",
+          "timestamp": "2026-03-18T21:09:36.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Good afternoon, we would prefer to send the money through Zelle to whom should we send it to?",
+          "timestamp": "2026-03-24T17:38:51.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Is it ok if we do it separately like 500 each as there is a limit on Zelle",
+          "timestamp": "2026-03-24T17:42:26.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Do you have the QR code for the Zelle account as neither of us are able to find the account",
+          "timestamp": "2026-03-24T17:45:55.000Z",
+          "status": "Received"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "payment_or_promise",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_032",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Christopher",
+        "last_name": "Williams",
+        "property_name": "12 Danbury Street Southeast",
+        "unit": "3",
+        "balance": 49.8,
+        "days_past_due": 23,
+        "stage": "16+_dpd",
+        "track": "standard",
+        "monthly_rent": 996,
+        "last_payment_amount": 746,
+        "last_payment_date": "03/06/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "Do you have the QR code for the Zelle account as neither of us are able to find the account",
+        "timestamp": "2026-03-24T17:45:55.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "in",
+          "body": "Another question I had was about having things on walls as I know that the lease says that we cannot drill into the walls but are we allowed to use thumb tacks to hang things up",
+          "timestamp": "2026-03-18T20:38:25.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Ok thank you",
+          "timestamp": "2026-03-18T21:09:36.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Good afternoon, we would prefer to send the money through Zelle to whom should we send it to?",
+          "timestamp": "2026-03-24T17:38:51.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Is it ok if we do it separately like 500 each as there is a limit on Zelle",
+          "timestamp": "2026-03-24T17:42:26.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Do you have the QR code for the Zelle account as neither of us are able to find the account",
+          "timestamp": "2026-03-24T17:45:55.000Z",
+          "status": "Received"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "payment_or_promise",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_033",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Vincent",
+        "last_name": "Strollo Jr",
+        "property_name": "1913 South 20th Street",
+        "unit": "3",
+        "balance": 0,
+        "days_past_due": 0,
+        "stage": "current",
+        "track": "standard",
+        "monthly_rent": 148,
+        "last_payment_amount": 1334,
+        "last_payment_date": "03/02/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "Hi there! This is Karley Skultety. I’ve recently reached out to get more information about apartment on 2708 Wehnwood Rd, Altoona PA 16601. Last I heard from anyone was Thursday and was wondering if the 1 bedroom 1 bathroom unit was still available?",
+        "timestamp": "2026-03-22T02:07:20.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "in",
+          "body": "Hi there! This is Karley Skultety. I’ve recently reached out to get more information about apartment on 2708 Wehnwood Rd, Altoona PA 16601. Last I heard from anyone was Thursday and was wondering if the 1 bedroom 1 bathroom unit was still available?",
+          "timestamp": "2026-03-22T02:07:20.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "Hi Karley, we don't have any more one-bedroom units available.  Thank you",
+          "timestamp": "2026-03-23T17:56:02.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "Your website says you still have 2 units available just so you're aware! Thanks",
+          "timestamp": "2026-03-23T18:00:28.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "This is an error. Thank you.",
+          "timestamp": "2026-03-23T18:16:24.000Z",
+          "status": "Delivered"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "needs_reply",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_034",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Vincent",
+        "last_name": "Strollo Jr",
+        "property_name": "1913 South 20th Street",
+        "unit": "3",
+        "balance": 0,
+        "days_past_due": 0,
+        "stage": "current",
+        "track": "standard",
+        "monthly_rent": 148,
+        "last_payment_amount": 1334,
+        "last_payment_date": "03/02/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "Your website says you still have 2 units available just so you're aware! Thanks",
+        "timestamp": "2026-03-23T18:00:28.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "in",
+          "body": "Hi there! This is Karley Skultety. I’ve recently reached out to get more information about apartment on 2708 Wehnwood Rd, Altoona PA 16601. Last I heard from anyone was Thursday and was wondering if the 1 bedroom 1 bathroom unit was still available?",
+          "timestamp": "2026-03-22T02:07:20.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "Hi Karley, we don't have any more one-bedroom units available.  Thank you",
+          "timestamp": "2026-03-23T17:56:02.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "Your website says you still have 2 units available just so you're aware! Thanks",
+          "timestamp": "2026-03-23T18:00:28.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "This is an error. Thank you.",
+          "timestamp": "2026-03-23T18:16:24.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "out",
+          "body": "Hi, this is Tri Star Realty Leasing. We received your inquiry and would love to help you find your next home. Wehnwood Court Apartments D2B inquiry - redirecting to available units D1/D3 Please reply or call us anytime!",
+          "timestamp": "2026-03-24T00:19:34.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "So there are available units?",
+          "timestamp": "2026-03-24T00:27:09.000Z",
+          "status": "Received"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "needs_reply",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_035",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Vincent",
+        "last_name": "Strollo Jr",
+        "property_name": "1913 South 20th Street",
+        "unit": "3",
+        "balance": 0,
+        "days_past_due": 0,
+        "stage": "current",
+        "track": "standard",
+        "monthly_rent": 148,
+        "last_payment_amount": 1334,
+        "last_payment_date": "03/02/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "So there are available units?",
+        "timestamp": "2026-03-24T00:27:09.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "out",
+          "body": "Hi Karley, we don't have any more one-bedroom units available.  Thank you",
+          "timestamp": "2026-03-23T17:56:02.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "Your website says you still have 2 units available just so you're aware! Thanks",
+          "timestamp": "2026-03-23T18:00:28.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "This is an error. Thank you.",
+          "timestamp": "2026-03-23T18:16:24.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "out",
+          "body": "Hi, this is Tri Star Realty Leasing. We received your inquiry and would love to help you find your next home. Wehnwood Court Apartments D2B inquiry - redirecting to available units D1/D3 Please reply or call us anytime!",
+          "timestamp": "2026-03-24T00:19:34.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "So there are available units?",
+          "timestamp": "2026-03-24T00:27:09.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "No",
+          "timestamp": "2026-03-24T13:17:55.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "So what did that text message mean? It sounds like D1 and D3 are open?",
+          "timestamp": "2026-03-24T17:18:26.000Z",
+          "status": "Received"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "needs_reply",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_036",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Vincent",
+        "last_name": "Strollo Jr",
+        "property_name": "1913 South 20th Street",
+        "unit": "3",
+        "balance": 0,
+        "days_past_due": 0,
+        "stage": "current",
+        "track": "standard",
+        "monthly_rent": 148,
+        "last_payment_amount": 1334,
+        "last_payment_date": "03/02/2026",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "So what did that text message mean? It sounds like D1 and D3 are open?",
+        "timestamp": "2026-03-24T17:18:26.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "out",
+          "body": "This is an error. Thank you.",
+          "timestamp": "2026-03-23T18:16:24.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "out",
+          "body": "Hi, this is Tri Star Realty Leasing. We received your inquiry and would love to help you find your next home. Wehnwood Court Apartments D2B inquiry - redirecting to available units D1/D3 Please reply or call us anytime!",
+          "timestamp": "2026-03-24T00:19:34.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "So there are available units?",
+          "timestamp": "2026-03-24T00:27:09.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "No",
+          "timestamp": "2026-03-24T13:17:55.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "So what did that text message mean? It sounds like D1 and D3 are open?",
+          "timestamp": "2026-03-24T17:18:26.000Z",
+          "status": "Received"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "needs_reply",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_037",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Madison",
+        "last_name": "A Blondin",
+        "property_name": "200 College Park Dr",
+        "unit": "207",
+        "balance": 0,
+        "days_past_due": 0,
+        "stage": "current",
+        "track": "standard",
+        "monthly_rent": 880,
+        "last_payment_amount": null,
+        "last_payment_date": "",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "I understand that your rental criteria includes a 650 credit score requirement. While my current score is below that threshold, I want to assure you that I am actively working to improve it.\n\nI am currently enrolled with Lexington Law, a professional credit repair firm, and my credit profile is being reviewed and corrected. Some negative items are in dispute and in the process of being resolved.\n\nMy credit challenges were due to my son passing And relocating.. my financial situation is now stable. I have steady income and can provide pay stubs, bank statements, and references to demonstrate my ability to pay rent on time.\n\nI am also willing to provide 2-3 months to provide additional assurance.\n\nThank you for considering my application. I am responsible, reliable, and committed to maintaining a positive rental history.\n\nSincerely,\nChyna Robbins\n[PHONE_REMOVED]",
+        "timestamp": "2026-02-27T03:33:30.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "out",
+          "body": "Here is the application link: https://apply.link/zQpqWdc",
+          "timestamp": "2026-02-26T14:28:19.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "I understand that your rental criteria includes a 650 credit score requirement. While my current score is below that threshold, I want to assure you that I am actively working to improve it.\n\nI am currently enrolled with Lexington Law, a professional credit repair firm, and my credit profile is being reviewed and corrected. Some negative items are in dispute and in the process of being resolved.\n\nMy credit challenges were due to my son passing And relocating.. my financial situation is now stable. I have steady income and can provide pay stubs, bank statements, and references to demonstrate my ability to pay rent on time.\n\nI am also willing to provide 2-3 months to provide additional assurance.\n\nThank you for considering my application. I am responsible, reliable, and committed to maintaining a positive rental history.\n\nSincerely,\nChyna Robbins\n[PHONE_REMOVED]",
+          "timestamp": "2026-02-27T03:33:30.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "Hi Chyna, I received your application. Please send your 2025 W-2 and the three most recent pay stubs to [EMAIL_REMOVED]. Thank you. Matan with Tri Star Realty",
+          "timestamp": "2026-02-27T15:27:56.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "out",
+          "body": "Hi, this is Tri Star Realty Leasing. We received your inquiry and would love to help you find your next home. Chyna Robbins - application status for Wehnwood SS235 - holding reply Please reply or call us anytime!",
+          "timestamp": "2026-03-24T02:02:18.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "I'm interested",
+          "timestamp": "2026-03-24T02:07:05.000Z",
+          "status": "Received"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "needs_reply",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_038",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Madison",
+        "last_name": "A Blondin",
+        "property_name": "200 College Park Dr",
+        "unit": "207",
+        "balance": 0,
+        "days_past_due": 0,
+        "stage": "current",
+        "track": "standard",
+        "monthly_rent": 880,
+        "last_payment_amount": null,
+        "last_payment_date": "",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "I'm interested",
+        "timestamp": "2026-03-24T02:07:05.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "out",
+          "body": "Here is the application link: https://apply.link/zQpqWdc",
+          "timestamp": "2026-02-26T14:28:19.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "I understand that your rental criteria includes a 650 credit score requirement. While my current score is below that threshold, I want to assure you that I am actively working to improve it.\n\nI am currently enrolled with Lexington Law, a professional credit repair firm, and my credit profile is being reviewed and corrected. Some negative items are in dispute and in the process of being resolved.\n\nMy credit challenges were due to my son passing And relocating.. my financial situation is now stable. I have steady income and can provide pay stubs, bank statements, and references to demonstrate my ability to pay rent on time.\n\nI am also willing to provide 2-3 months to provide additional assurance.\n\nThank you for considering my application. I am responsible, reliable, and committed to maintaining a positive rental history.\n\nSincerely,\nChyna Robbins\n[PHONE_REMOVED]",
+          "timestamp": "2026-02-27T03:33:30.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "Hi Chyna, I received your application. Please send your 2025 W-2 and the three most recent pay stubs to [EMAIL_REMOVED]. Thank you. Matan with Tri Star Realty",
+          "timestamp": "2026-02-27T15:27:56.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "out",
+          "body": "Hi, this is Tri Star Realty Leasing. We received your inquiry and would love to help you find your next home. Chyna Robbins - application status for Wehnwood SS235 - holding reply Please reply or call us anytime!",
+          "timestamp": "2026-03-24T02:02:18.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "I'm interested",
+          "timestamp": "2026-03-24T02:07:05.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "Please send your 2025 W-2 and the three most recent pay stubs, along with a photo ID, to [EMAIL_REMOVED]. Thank you. Matan with Tri Star Realty",
+          "timestamp": "2026-03-24T17:05:05.000Z",
+          "status": "Delivered"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "needs_reply",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_039",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Jarell",
+        "last_name": "Mills",
+        "property_name": "2119-2121 W 3rd St",
+        "unit": "11",
+        "balance": 0,
+        "days_past_due": 0,
+        "stage": "current",
+        "track": "standard",
+        "monthly_rent": 980,
+        "last_payment_amount": 800,
+        "last_payment_date": "06/29/2024",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "e reason for moving is because I’m fleeing domestic violence, I have very good standing with my current landlord of 5 years and can happily use her as a reference. But I’m moving out for safety and privacy. \n\nIdeally, I’m hoping for a mid April move in if timing works out with the units. I’d also love to come back next week to tour the upgraded units once the countertops are finished if that’s still an option!\n\nPlease let me know the best next steps for applying and anything you may need from me I’m ready to move forward whenever you are! This is very exciting and big to me, I’ve toured about 12 places during this journey of mine and your apartments are the only ones I’ve felt sure of for my son and I. \n\nThank you so much again, I really appreciate your time and help!",
+        "timestamp": "2026-03-17T18:32:15.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "in",
+          "body": "e reason for moving is because I’m fleeing domestic violence, I have very good standing with my current landlord of 5 years and can happily use her as a reference. But I’m moving out for safety and privacy. \n\nIdeally, I’m hoping for a mid April move in if timing works out with the units. I’d also love to come back next week to tour the upgraded units once the countertops are finished if that’s still an option!\n\nPlease let me know the best next steps for applying and anything you may need from me I’m ready to move forward whenever you are! This is very exciting and big to me, I’ve toured about 12 places during this journey of mine and your apartments are the only ones I’ve felt sure of for my son and I. \n\nThank you so much again, I really appreciate your time and help!",
+          "timestamp": "2026-03-17T18:32:15.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Hi Matan! 😊\n\nMy name is Zoie Wright. I toured apartments today with Aaron and absolutely LOVED them. I wanted to reach out and introduce myself directly and follow up on everything we discussed.\n\nI’m currently working with a housing voucher through cobra and have all of my paperwork ready to go. I’m very motivated to move forward quickly, I just may need a little guidance on the application process since this is my first time using a program like this.\n\nAaron mentioned units 104 and 503 as the upgraded options with the newer kitchens, and those are definitely my top choices. I especially love the idea of the updated appliances and finishes, so I’d be very interested in either of those depending on pricing and availability.\n\nFor a little context, it would just be me and my young son living in the unit. I’m very clean, quiet, and take a lot of pride in my home, so finding a place that feels like a good long term fit is really important to me  and this community honestly felt perfect. Th",
+          "timestamp": "2026-03-17T18:32:15.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Sorry that was long! I'd love to start an application process with you, and I have a cobra voucher, call or text me when you get a chance",
+          "timestamp": "2026-03-17T19:47:05.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "Hi Zoie! Please send your 2025 W-2, the three most recent pay stubs, the voucher, and a photo ID to [EMAIL_REMOVED]. Thank you. Matan with Tri Star Realty.",
+          "timestamp": "2026-03-17T20:28:49.000Z",
+          "status": "Delivered"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "hardship_or_sensitive",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_040",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Jarell",
+        "last_name": "Mills",
+        "property_name": "2119-2121 W 3rd St",
+        "unit": "11",
+        "balance": 0,
+        "days_past_due": 0,
+        "stage": "current",
+        "track": "standard",
+        "monthly_rent": 980,
+        "last_payment_amount": 800,
+        "last_payment_date": "06/29/2024",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "Hi Matan! 😊\n\nMy name is Zoie Wright. I toured apartments today with Aaron and absolutely LOVED them. I wanted to reach out and introduce myself directly and follow up on everything we discussed.\n\nI’m currently working with a housing voucher through cobra and have all of my paperwork ready to go. I’m very motivated to move forward quickly, I just may need a little guidance on the application process since this is my first time using a program like this.\n\nAaron mentioned units 104 and 503 as the upgraded options with the newer kitchens, and those are definitely my top choices. I especially love the idea of the updated appliances and finishes, so I’d be very interested in either of those depending on pricing and availability.\n\nFor a little context, it would just be me and my young son living in the unit. I’m very clean, quiet, and take a lot of pride in my home, so finding a place that feels like a good long term fit is really important to me  and this community honestly felt perfect. Th",
+        "timestamp": "2026-03-17T18:32:15.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "in",
+          "body": "e reason for moving is because I’m fleeing domestic violence, I have very good standing with my current landlord of 5 years and can happily use her as a reference. But I’m moving out for safety and privacy. \n\nIdeally, I’m hoping for a mid April move in if timing works out with the units. I’d also love to come back next week to tour the upgraded units once the countertops are finished if that’s still an option!\n\nPlease let me know the best next steps for applying and anything you may need from me I’m ready to move forward whenever you are! This is very exciting and big to me, I’ve toured about 12 places during this journey of mine and your apartments are the only ones I’ve felt sure of for my son and I. \n\nThank you so much again, I really appreciate your time and help!",
+          "timestamp": "2026-03-17T18:32:15.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Hi Matan! 😊\n\nMy name is Zoie Wright. I toured apartments today with Aaron and absolutely LOVED them. I wanted to reach out and introduce myself directly and follow up on everything we discussed.\n\nI’m currently working with a housing voucher through cobra and have all of my paperwork ready to go. I’m very motivated to move forward quickly, I just may need a little guidance on the application process since this is my first time using a program like this.\n\nAaron mentioned units 104 and 503 as the upgraded options with the newer kitchens, and those are definitely my top choices. I especially love the idea of the updated appliances and finishes, so I’d be very interested in either of those depending on pricing and availability.\n\nFor a little context, it would just be me and my young son living in the unit. I’m very clean, quiet, and take a lot of pride in my home, so finding a place that feels like a good long term fit is really important to me  and this community honestly felt perfect. Th",
+          "timestamp": "2026-03-17T18:32:15.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Sorry that was long! I'd love to start an application process with you, and I have a cobra voucher, call or text me when you get a chance",
+          "timestamp": "2026-03-17T19:47:05.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "Hi Zoie! Please send your 2025 W-2, the three most recent pay stubs, the voucher, and a photo ID to [EMAIL_REMOVED]. Thank you. Matan with Tri Star Realty.",
+          "timestamp": "2026-03-17T20:28:49.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "Hi! I just wanted to follow up and let you know I sent that email it will be coming from [EMAIL_REMOVED].\n\nI’m looking forward to hearing from you, and I really appreciate you considering me as a tenant. I’d be happy to provide anything else you may need and would love the opportunity to fill out an application if I’m eligible!",
+          "timestamp": "2026-03-17T21:18:10.000Z",
+          "status": "Received"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "needs_reply",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_041",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Jarell",
+        "last_name": "Mills",
+        "property_name": "2119-2121 W 3rd St",
+        "unit": "11",
+        "balance": 0,
+        "days_past_due": 0,
+        "stage": "current",
+        "track": "standard",
+        "monthly_rent": 980,
+        "last_payment_amount": 800,
+        "last_payment_date": "06/29/2024",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "Sorry that was long! I'd love to start an application process with you, and I have a cobra voucher, call or text me when you get a chance",
+        "timestamp": "2026-03-17T19:47:05.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "in",
+          "body": "e reason for moving is because I’m fleeing domestic violence, I have very good standing with my current landlord of 5 years and can happily use her as a reference. But I’m moving out for safety and privacy. \n\nIdeally, I’m hoping for a mid April move in if timing works out with the units. I’d also love to come back next week to tour the upgraded units once the countertops are finished if that’s still an option!\n\nPlease let me know the best next steps for applying and anything you may need from me I’m ready to move forward whenever you are! This is very exciting and big to me, I’ve toured about 12 places during this journey of mine and your apartments are the only ones I’ve felt sure of for my son and I. \n\nThank you so much again, I really appreciate your time and help!",
+          "timestamp": "2026-03-17T18:32:15.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Hi Matan! 😊\n\nMy name is Zoie Wright. I toured apartments today with Aaron and absolutely LOVED them. I wanted to reach out and introduce myself directly and follow up on everything we discussed.\n\nI’m currently working with a housing voucher through cobra and have all of my paperwork ready to go. I’m very motivated to move forward quickly, I just may need a little guidance on the application process since this is my first time using a program like this.\n\nAaron mentioned units 104 and 503 as the upgraded options with the newer kitchens, and those are definitely my top choices. I especially love the idea of the updated appliances and finishes, so I’d be very interested in either of those depending on pricing and availability.\n\nFor a little context, it would just be me and my young son living in the unit. I’m very clean, quiet, and take a lot of pride in my home, so finding a place that feels like a good long term fit is really important to me  and this community honestly felt perfect. Th",
+          "timestamp": "2026-03-17T18:32:15.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Sorry that was long! I'd love to start an application process with you, and I have a cobra voucher, call or text me when you get a chance",
+          "timestamp": "2026-03-17T19:47:05.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "Hi Zoie! Please send your 2025 W-2, the three most recent pay stubs, the voucher, and a photo ID to [EMAIL_REMOVED]. Thank you. Matan with Tri Star Realty.",
+          "timestamp": "2026-03-17T20:28:49.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "Hi! I just wanted to follow up and let you know I sent that email it will be coming from [EMAIL_REMOVED].\n\nI’m looking forward to hearing from you, and I really appreciate you considering me as a tenant. I’d be happy to provide anything else you may need and would love the opportunity to fill out an application if I’m eligible!",
+          "timestamp": "2026-03-17T21:18:10.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Hi! I just wanted to follow up and see if you had a chance to look over the information I sent. I know you’ve been sorting through a lot, so no rush at all just wanted to check in whenever you have a moment!",
+          "timestamp": "2026-03-18T21:29:44.000Z",
+          "status": "Received"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "needs_reply",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_042",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Jarell",
+        "last_name": "Mills",
+        "property_name": "2119-2121 W 3rd St",
+        "unit": "11",
+        "balance": 0,
+        "days_past_due": 0,
+        "stage": "current",
+        "track": "standard",
+        "monthly_rent": 980,
+        "last_payment_amount": 800,
+        "last_payment_date": "06/29/2024",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "Hi! I just wanted to follow up and let you know I sent that email it will be coming from [EMAIL_REMOVED].\n\nI’m looking forward to hearing from you, and I really appreciate you considering me as a tenant. I’d be happy to provide anything else you may need and would love the opportunity to fill out an application if I’m eligible!",
+        "timestamp": "2026-03-17T21:18:10.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "in",
+          "body": "e reason for moving is because I’m fleeing domestic violence, I have very good standing with my current landlord of 5 years and can happily use her as a reference. But I’m moving out for safety and privacy. \n\nIdeally, I’m hoping for a mid April move in if timing works out with the units. I’d also love to come back next week to tour the upgraded units once the countertops are finished if that’s still an option!\n\nPlease let me know the best next steps for applying and anything you may need from me I’m ready to move forward whenever you are! This is very exciting and big to me, I’ve toured about 12 places during this journey of mine and your apartments are the only ones I’ve felt sure of for my son and I. \n\nThank you so much again, I really appreciate your time and help!",
+          "timestamp": "2026-03-17T18:32:15.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Hi Matan! 😊\n\nMy name is Zoie Wright. I toured apartments today with Aaron and absolutely LOVED them. I wanted to reach out and introduce myself directly and follow up on everything we discussed.\n\nI’m currently working with a housing voucher through cobra and have all of my paperwork ready to go. I’m very motivated to move forward quickly, I just may need a little guidance on the application process since this is my first time using a program like this.\n\nAaron mentioned units 104 and 503 as the upgraded options with the newer kitchens, and those are definitely my top choices. I especially love the idea of the updated appliances and finishes, so I’d be very interested in either of those depending on pricing and availability.\n\nFor a little context, it would just be me and my young son living in the unit. I’m very clean, quiet, and take a lot of pride in my home, so finding a place that feels like a good long term fit is really important to me  and this community honestly felt perfect. Th",
+          "timestamp": "2026-03-17T18:32:15.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Sorry that was long! I'd love to start an application process with you, and I have a cobra voucher, call or text me when you get a chance",
+          "timestamp": "2026-03-17T19:47:05.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "Hi Zoie! Please send your 2025 W-2, the three most recent pay stubs, the voucher, and a photo ID to [EMAIL_REMOVED]. Thank you. Matan with Tri Star Realty.",
+          "timestamp": "2026-03-17T20:28:49.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "Hi! I just wanted to follow up and let you know I sent that email it will be coming from [EMAIL_REMOVED].\n\nI’m looking forward to hearing from you, and I really appreciate you considering me as a tenant. I’d be happy to provide anything else you may need and would love the opportunity to fill out an application if I’m eligible!",
+          "timestamp": "2026-03-17T21:18:10.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Hi! I just wanted to follow up and see if you had a chance to look over the information I sent. I know you’ve been sorting through a lot, so no rush at all just wanted to check in whenever you have a moment!",
+          "timestamp": "2026-03-18T21:29:44.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Hi Matan I was told you can get very busy and if I didn't hear from you to keep trying so I'm just checking in. I hope you will consider me, your rentals seem like the perfect place for my son and I to get a fresh start.",
+          "timestamp": "2026-03-20T12:49:00.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Loved “Hi Zoie! Please send your 2025 W-2, the three most recent pay stubs, the voucher, and a photo ID to [EMAIL_REMOVED]. Thank you. Matan with Tri Star Realty.”",
+          "timestamp": "2026-03-20T12:51:30.000Z",
+          "status": "Received"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "payment_or_promise",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_043",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Jarell",
+        "last_name": "Mills",
+        "property_name": "2119-2121 W 3rd St",
+        "unit": "11",
+        "balance": 0,
+        "days_past_due": 0,
+        "stage": "current",
+        "track": "standard",
+        "monthly_rent": 980,
+        "last_payment_amount": 800,
+        "last_payment_date": "06/29/2024",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "Hi! I just wanted to follow up and see if you had a chance to look over the information I sent. I know you’ve been sorting through a lot, so no rush at all just wanted to check in whenever you have a moment!",
+        "timestamp": "2026-03-18T21:29:44.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "in",
+          "body": "Hi Matan! 😊\n\nMy name is Zoie Wright. I toured apartments today with Aaron and absolutely LOVED them. I wanted to reach out and introduce myself directly and follow up on everything we discussed.\n\nI’m currently working with a housing voucher through cobra and have all of my paperwork ready to go. I’m very motivated to move forward quickly, I just may need a little guidance on the application process since this is my first time using a program like this.\n\nAaron mentioned units 104 and 503 as the upgraded options with the newer kitchens, and those are definitely my top choices. I especially love the idea of the updated appliances and finishes, so I’d be very interested in either of those depending on pricing and availability.\n\nFor a little context, it would just be me and my young son living in the unit. I’m very clean, quiet, and take a lot of pride in my home, so finding a place that feels like a good long term fit is really important to me  and this community honestly felt perfect. Th",
+          "timestamp": "2026-03-17T18:32:15.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Sorry that was long! I'd love to start an application process with you, and I have a cobra voucher, call or text me when you get a chance",
+          "timestamp": "2026-03-17T19:47:05.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "Hi Zoie! Please send your 2025 W-2, the three most recent pay stubs, the voucher, and a photo ID to [EMAIL_REMOVED]. Thank you. Matan with Tri Star Realty.",
+          "timestamp": "2026-03-17T20:28:49.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "Hi! I just wanted to follow up and let you know I sent that email it will be coming from [EMAIL_REMOVED].\n\nI’m looking forward to hearing from you, and I really appreciate you considering me as a tenant. I’d be happy to provide anything else you may need and would love the opportunity to fill out an application if I’m eligible!",
+          "timestamp": "2026-03-17T21:18:10.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Hi! I just wanted to follow up and see if you had a chance to look over the information I sent. I know you’ve been sorting through a lot, so no rush at all just wanted to check in whenever you have a moment!",
+          "timestamp": "2026-03-18T21:29:44.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Hi Matan I was told you can get very busy and if I didn't hear from you to keep trying so I'm just checking in. I hope you will consider me, your rentals seem like the perfect place for my son and I to get a fresh start.",
+          "timestamp": "2026-03-20T12:49:00.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Loved “Hi Zoie! Please send your 2025 W-2, the three most recent pay stubs, the voucher, and a photo ID to [EMAIL_REMOVED]. Thank you. Matan with Tri Star Realty.”",
+          "timestamp": "2026-03-20T12:51:30.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "Hi Zoie, I haven't forgotten about you; I'm just currently busy with other tasks. I'll follow up with you sometime next week. Thanks for your patience.",
+          "timestamp": "2026-03-20T14:08:59.000Z",
+          "status": "Delivered"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "payment_or_promise",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_044",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Jarell",
+        "last_name": "Mills",
+        "property_name": "2119-2121 W 3rd St",
+        "unit": "11",
+        "balance": 0,
+        "days_past_due": 0,
+        "stage": "current",
+        "track": "standard",
+        "monthly_rent": 980,
+        "last_payment_amount": 800,
+        "last_payment_date": "06/29/2024",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "Hi Matan I was told you can get very busy and if I didn't hear from you to keep trying so I'm just checking in. I hope you will consider me, your rentals seem like the perfect place for my son and I to get a fresh start.",
+        "timestamp": "2026-03-20T12:49:00.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "in",
+          "body": "Sorry that was long! I'd love to start an application process with you, and I have a cobra voucher, call or text me when you get a chance",
+          "timestamp": "2026-03-17T19:47:05.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "Hi Zoie! Please send your 2025 W-2, the three most recent pay stubs, the voucher, and a photo ID to [EMAIL_REMOVED]. Thank you. Matan with Tri Star Realty.",
+          "timestamp": "2026-03-17T20:28:49.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "Hi! I just wanted to follow up and let you know I sent that email it will be coming from [EMAIL_REMOVED].\n\nI’m looking forward to hearing from you, and I really appreciate you considering me as a tenant. I’d be happy to provide anything else you may need and would love the opportunity to fill out an application if I’m eligible!",
+          "timestamp": "2026-03-17T21:18:10.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Hi! I just wanted to follow up and see if you had a chance to look over the information I sent. I know you’ve been sorting through a lot, so no rush at all just wanted to check in whenever you have a moment!",
+          "timestamp": "2026-03-18T21:29:44.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Hi Matan I was told you can get very busy and if I didn't hear from you to keep trying so I'm just checking in. I hope you will consider me, your rentals seem like the perfect place for my son and I to get a fresh start.",
+          "timestamp": "2026-03-20T12:49:00.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Loved “Hi Zoie! Please send your 2025 W-2, the three most recent pay stubs, the voucher, and a photo ID to [EMAIL_REMOVED]. Thank you. Matan with Tri Star Realty.”",
+          "timestamp": "2026-03-20T12:51:30.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "Hi Zoie, I haven't forgotten about you; I'm just currently busy with other tasks. I'll follow up with you sometime next week. Thanks for your patience.",
+          "timestamp": "2026-03-20T14:08:59.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "Hi Matan, thank you so much for the update. I really appreciate you getting back to me, and I completely understand things get busy. I’m very interested, so I’ll look forward to hearing from you next week. Thanks again for your time and consideration!",
+          "timestamp": "2026-03-20T20:07:43.000Z",
+          "status": "Received"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "needs_reply",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_045",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Jarell",
+        "last_name": "Mills",
+        "property_name": "2119-2121 W 3rd St",
+        "unit": "11",
+        "balance": 0,
+        "days_past_due": 0,
+        "stage": "current",
+        "track": "standard",
+        "monthly_rent": 980,
+        "last_payment_amount": 800,
+        "last_payment_date": "06/29/2024",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "Loved “Hi Zoie! Please send your 2025 W-2, the three most recent pay stubs, the voucher, and a photo ID to [EMAIL_REMOVED]. Thank you. Matan with Tri Star Realty.”",
+        "timestamp": "2026-03-20T12:51:30.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "out",
+          "body": "Hi Zoie! Please send your 2025 W-2, the three most recent pay stubs, the voucher, and a photo ID to [EMAIL_REMOVED]. Thank you. Matan with Tri Star Realty.",
+          "timestamp": "2026-03-17T20:28:49.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "Hi! I just wanted to follow up and let you know I sent that email it will be coming from [EMAIL_REMOVED].\n\nI’m looking forward to hearing from you, and I really appreciate you considering me as a tenant. I’d be happy to provide anything else you may need and would love the opportunity to fill out an application if I’m eligible!",
+          "timestamp": "2026-03-17T21:18:10.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Hi! I just wanted to follow up and see if you had a chance to look over the information I sent. I know you’ve been sorting through a lot, so no rush at all just wanted to check in whenever you have a moment!",
+          "timestamp": "2026-03-18T21:29:44.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Hi Matan I was told you can get very busy and if I didn't hear from you to keep trying so I'm just checking in. I hope you will consider me, your rentals seem like the perfect place for my son and I to get a fresh start.",
+          "timestamp": "2026-03-20T12:49:00.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Loved “Hi Zoie! Please send your 2025 W-2, the three most recent pay stubs, the voucher, and a photo ID to [EMAIL_REMOVED]. Thank you. Matan with Tri Star Realty.”",
+          "timestamp": "2026-03-20T12:51:30.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "Hi Zoie, I haven't forgotten about you; I'm just currently busy with other tasks. I'll follow up with you sometime next week. Thanks for your patience.",
+          "timestamp": "2026-03-20T14:08:59.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "Hi Matan, thank you so much for the update. I really appreciate you getting back to me, and I completely understand things get busy. I’m very interested, so I’ll look forward to hearing from you next week. Thanks again for your time and consideration!",
+          "timestamp": "2026-03-20T20:07:43.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Hi Matan, I responded in email but wanted to text too. Thank you so much for getting back to me. \n\nI just called my caseworker, and she asked me to check with you about the property taxes for this address. Could you please let me know whether the property taxes are paid to a township or to the “City of Altoona”? \n\nShe said that information will help her determine if whether my housing voucher can be used at this property.\n\nThank you again for your time and help. I really appreciate it, and I look forward to hearing back from you.\n\nBest, Zoie Wright",
+          "timestamp": "2026-03-23T15:17:43.000Z",
+          "status": "Received"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "needs_reply",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_046",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Jarell",
+        "last_name": "Mills",
+        "property_name": "2119-2121 W 3rd St",
+        "unit": "11",
+        "balance": 0,
+        "days_past_due": 0,
+        "stage": "current",
+        "track": "standard",
+        "monthly_rent": 980,
+        "last_payment_amount": 800,
+        "last_payment_date": "06/29/2024",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "Hi Matan, thank you so much for the update. I really appreciate you getting back to me, and I completely understand things get busy. I’m very interested, so I’ll look forward to hearing from you next week. Thanks again for your time and consideration!",
+        "timestamp": "2026-03-20T20:07:43.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "in",
+          "body": "Hi! I just wanted to follow up and see if you had a chance to look over the information I sent. I know you’ve been sorting through a lot, so no rush at all just wanted to check in whenever you have a moment!",
+          "timestamp": "2026-03-18T21:29:44.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Hi Matan I was told you can get very busy and if I didn't hear from you to keep trying so I'm just checking in. I hope you will consider me, your rentals seem like the perfect place for my son and I to get a fresh start.",
+          "timestamp": "2026-03-20T12:49:00.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Loved “Hi Zoie! Please send your 2025 W-2, the three most recent pay stubs, the voucher, and a photo ID to [EMAIL_REMOVED]. Thank you. Matan with Tri Star Realty.”",
+          "timestamp": "2026-03-20T12:51:30.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "Hi Zoie, I haven't forgotten about you; I'm just currently busy with other tasks. I'll follow up with you sometime next week. Thanks for your patience.",
+          "timestamp": "2026-03-20T14:08:59.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "Hi Matan, thank you so much for the update. I really appreciate you getting back to me, and I completely understand things get busy. I’m very interested, so I’ll look forward to hearing from you next week. Thanks again for your time and consideration!",
+          "timestamp": "2026-03-20T20:07:43.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Hi Matan, I responded in email but wanted to text too. Thank you so much for getting back to me. \n\nI just called my caseworker, and she asked me to check with you about the property taxes for this address. Could you please let me know whether the property taxes are paid to a township or to the “City of Altoona”? \n\nShe said that information will help her determine if whether my housing voucher can be used at this property.\n\nThank you again for your time and help. I really appreciate it, and I look forward to hearing back from you.\n\nBest, Zoie Wright",
+          "timestamp": "2026-03-23T15:17:43.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "My caseworker gave me this map, and the only area I’m not able to rent in is the section marked in red pen if you zoom in. Based on where this property seems to be located, I’m hoping it may fall outside of that area and that the property taxes are paid to Logan Township, Juniata Township, or another municipality rather than the City of Altoona.",
+          "timestamp": "2026-03-23T16:30:39.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "I can't confirm at this time. I'll leave it up to you if you want to apply. I can't guarantee that we will approve your application.",
+          "timestamp": "2026-03-23T16:37:19.000Z",
+          "status": "Delivered"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "needs_reply",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_047",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Jarell",
+        "last_name": "Mills",
+        "property_name": "2119-2121 W 3rd St",
+        "unit": "11",
+        "balance": 0,
+        "days_past_due": 0,
+        "stage": "current",
+        "track": "standard",
+        "monthly_rent": 980,
+        "last_payment_amount": 800,
+        "last_payment_date": "06/29/2024",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "Hi Matan, I responded in email but wanted to text too. Thank you so much for getting back to me. \n\nI just called my caseworker, and she asked me to check with you about the property taxes for this address. Could you please let me know whether the property taxes are paid to a township or to the “City of Altoona”? \n\nShe said that information will help her determine if whether my housing voucher can be used at this property.\n\nThank you again for your time and help. I really appreciate it, and I look forward to hearing back from you.\n\nBest, Zoie Wright",
+        "timestamp": "2026-03-23T15:17:43.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "in",
+          "body": "Hi Matan I was told you can get very busy and if I didn't hear from you to keep trying so I'm just checking in. I hope you will consider me, your rentals seem like the perfect place for my son and I to get a fresh start.",
+          "timestamp": "2026-03-20T12:49:00.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Loved “Hi Zoie! Please send your 2025 W-2, the three most recent pay stubs, the voucher, and a photo ID to [EMAIL_REMOVED]. Thank you. Matan with Tri Star Realty.”",
+          "timestamp": "2026-03-20T12:51:30.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "Hi Zoie, I haven't forgotten about you; I'm just currently busy with other tasks. I'll follow up with you sometime next week. Thanks for your patience.",
+          "timestamp": "2026-03-20T14:08:59.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "Hi Matan, thank you so much for the update. I really appreciate you getting back to me, and I completely understand things get busy. I’m very interested, so I’ll look forward to hearing from you next week. Thanks again for your time and consideration!",
+          "timestamp": "2026-03-20T20:07:43.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Hi Matan, I responded in email but wanted to text too. Thank you so much for getting back to me. \n\nI just called my caseworker, and she asked me to check with you about the property taxes for this address. Could you please let me know whether the property taxes are paid to a township or to the “City of Altoona”? \n\nShe said that information will help her determine if whether my housing voucher can be used at this property.\n\nThank you again for your time and help. I really appreciate it, and I look forward to hearing back from you.\n\nBest, Zoie Wright",
+          "timestamp": "2026-03-23T15:17:43.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "My caseworker gave me this map, and the only area I’m not able to rent in is the section marked in red pen if you zoom in. Based on where this property seems to be located, I’m hoping it may fall outside of that area and that the property taxes are paid to Logan Township, Juniata Township, or another municipality rather than the City of Altoona.",
+          "timestamp": "2026-03-23T16:30:39.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "I can't confirm at this time. I'll leave it up to you if you want to apply. I can't guarantee that we will approve your application.",
+          "timestamp": "2026-03-23T16:37:19.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "Hi Matan, I was able to confirm that this property is eligible with my voucher, and I have now submitted my application. I would truly appreciate your consideration for myself and my son. My first reference is my current landlord, and I’d be glad to provide any additional information if needed. Thank you again for your time.",
+          "timestamp": "2026-03-23T20:15:01.000Z",
+          "status": "Received"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "payment_or_promise",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_048",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Jarell",
+        "last_name": "Mills",
+        "property_name": "2119-2121 W 3rd St",
+        "unit": "11",
+        "balance": 0,
+        "days_past_due": 0,
+        "stage": "current",
+        "track": "standard",
+        "monthly_rent": 980,
+        "last_payment_amount": 800,
+        "last_payment_date": "06/29/2024",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "My caseworker gave me this map, and the only area I’m not able to rent in is the section marked in red pen if you zoom in. Based on where this property seems to be located, I’m hoping it may fall outside of that area and that the property taxes are paid to Logan Township, Juniata Township, or another municipality rather than the City of Altoona.",
+        "timestamp": "2026-03-23T16:30:39.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "in",
+          "body": "Loved “Hi Zoie! Please send your 2025 W-2, the three most recent pay stubs, the voucher, and a photo ID to [EMAIL_REMOVED]. Thank you. Matan with Tri Star Realty.”",
+          "timestamp": "2026-03-20T12:51:30.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "Hi Zoie, I haven't forgotten about you; I'm just currently busy with other tasks. I'll follow up with you sometime next week. Thanks for your patience.",
+          "timestamp": "2026-03-20T14:08:59.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "Hi Matan, thank you so much for the update. I really appreciate you getting back to me, and I completely understand things get busy. I’m very interested, so I’ll look forward to hearing from you next week. Thanks again for your time and consideration!",
+          "timestamp": "2026-03-20T20:07:43.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Hi Matan, I responded in email but wanted to text too. Thank you so much for getting back to me. \n\nI just called my caseworker, and she asked me to check with you about the property taxes for this address. Could you please let me know whether the property taxes are paid to a township or to the “City of Altoona”? \n\nShe said that information will help her determine if whether my housing voucher can be used at this property.\n\nThank you again for your time and help. I really appreciate it, and I look forward to hearing back from you.\n\nBest, Zoie Wright",
+          "timestamp": "2026-03-23T15:17:43.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "My caseworker gave me this map, and the only area I’m not able to rent in is the section marked in red pen if you zoom in. Based on where this property seems to be located, I’m hoping it may fall outside of that area and that the property taxes are paid to Logan Township, Juniata Township, or another municipality rather than the City of Altoona.",
+          "timestamp": "2026-03-23T16:30:39.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "I can't confirm at this time. I'll leave it up to you if you want to apply. I can't guarantee that we will approve your application.",
+          "timestamp": "2026-03-23T16:37:19.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "Hi Matan, I was able to confirm that this property is eligible with my voucher, and I have now submitted my application. I would truly appreciate your consideration for myself and my son. My first reference is my current landlord, and I’d be glad to provide any additional information if needed. Thank you again for your time.",
+          "timestamp": "2026-03-23T20:15:01.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "Hi Zoie, I received your application. Do you have your caseworker's contact information? I would like to speak with her.",
+          "timestamp": "2026-03-24T17:01:04.000Z",
+          "status": "Delivered"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "payment_or_promise",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_049",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Jarell",
+        "last_name": "Mills",
+        "property_name": "2119-2121 W 3rd St",
+        "unit": "11",
+        "balance": 0,
+        "days_past_due": 0,
+        "stage": "current",
+        "track": "standard",
+        "monthly_rent": 980,
+        "last_payment_amount": 800,
+        "last_payment_date": "06/29/2024",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "Hi Matan, I was able to confirm that this property is eligible with my voucher, and I have now submitted my application. I would truly appreciate your consideration for myself and my son. My first reference is my current landlord, and I’d be glad to provide any additional information if needed. Thank you again for your time.",
+        "timestamp": "2026-03-23T20:15:01.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "in",
+          "body": "Hi Matan, thank you so much for the update. I really appreciate you getting back to me, and I completely understand things get busy. I’m very interested, so I’ll look forward to hearing from you next week. Thanks again for your time and consideration!",
+          "timestamp": "2026-03-20T20:07:43.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "Hi Matan, I responded in email but wanted to text too. Thank you so much for getting back to me. \n\nI just called my caseworker, and she asked me to check with you about the property taxes for this address. Could you please let me know whether the property taxes are paid to a township or to the “City of Altoona”? \n\nShe said that information will help her determine if whether my housing voucher can be used at this property.\n\nThank you again for your time and help. I really appreciate it, and I look forward to hearing back from you.\n\nBest, Zoie Wright",
+          "timestamp": "2026-03-23T15:17:43.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "in",
+          "body": "My caseworker gave me this map, and the only area I’m not able to rent in is the section marked in red pen if you zoom in. Based on where this property seems to be located, I’m hoping it may fall outside of that area and that the property taxes are paid to Logan Township, Juniata Township, or another municipality rather than the City of Altoona.",
+          "timestamp": "2026-03-23T16:30:39.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "I can't confirm at this time. I'll leave it up to you if you want to apply. I can't guarantee that we will approve your application.",
+          "timestamp": "2026-03-23T16:37:19.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "Hi Matan, I was able to confirm that this property is eligible with my voucher, and I have now submitted my application. I would truly appreciate your consideration for myself and my son. My first reference is my current landlord, and I’d be glad to provide any additional information if needed. Thank you again for your time.",
+          "timestamp": "2026-03-23T20:15:01.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "Hi Zoie, I received your application. Do you have your caseworker's contact information? I would like to speak with her.",
+          "timestamp": "2026-03-24T17:01:04.000Z",
+          "status": "Delivered"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "needs_reply",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    },
+    {
+      "id": "case_050",
+      "source": "rc_messages",
+      "tenant_context_source": "sample_real_collections_tenant_not_phone_matched",
+      "tenant": {
+        "first_name": "Hayden",
+        "last_name": "Vitz",
+        "property_name": "2708 Wehnwood Road",
+        "unit": "S27A",
+        "balance": 0,
+        "days_past_due": 0,
+        "stage": "current",
+        "track": "standard",
+        "monthly_rent": 649.22,
+        "last_payment_amount": null,
+        "last_payment_date": "",
+        "promise_date": "",
+        "promise_to_pay": "",
+        "hold_flag": false,
+        "hold_reason": "",
+        "notes": ""
+      },
+      "incoming": {
+        "direction": "in",
+        "body": "Quanda Thompson [EMAIL_REMOVED]\nEric urquhart \n[EMAIL_REMOVED]",
+        "timestamp": "2026-03-17T16:50:56.000Z",
+        "status": "Received"
+      },
+      "thread": [
+        {
+          "direction": "out",
+          "body": "Matan Tobolsky - Property Manager",
+          "timestamp": "2026-03-17T16:47:15.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "out",
+          "body": "[EMAIL_REMOVED]",
+          "timestamp": "2026-03-17T16:47:31.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "out",
+          "body": "[EMAIL_REMOVED]",
+          "timestamp": "2026-03-17T16:47:40.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "Quanda Thompson [EMAIL_REMOVED]\nEric urquhart \n[EMAIL_REMOVED]",
+          "timestamp": "2026-03-17T16:50:56.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "Hi, you can send the $1,180 using Zelle, Venmo, or CashApp. Please let me know your preferred payment method.",
+          "timestamp": "2026-03-17T17:33:08.000Z",
+          "status": "Delivered"
+        },
+        {
+          "direction": "in",
+          "body": "How does it work with rent cafe",
+          "timestamp": "2026-03-17T17:38:15.000Z",
+          "status": "Received"
+        },
+        {
+          "direction": "out",
+          "body": "After you pay the $1,180, I will send you an invite to register on RentCafe.",
+          "timestamp": "2026-03-17T17:39:22.000Z",
+          "status": "Delivered"
+        }
+      ],
+      "expected_starting_point": {
+        "category_hint": "needs_reply",
+        "candidate_should_decide_action": true,
+        "note": "Use judgment. For sensitive, compliance, payment-claim, or ambiguous replies, prefer human_review over an automatic rent demand."
+      }
+    }
+  ]
+}
